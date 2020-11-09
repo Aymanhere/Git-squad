@@ -1,14 +1,19 @@
-BLOCK1:
+v0:
+Diagramme de classes 1 :
+On réalise une interface graphique qui contient un point commandé par boutons du clavier qui bouge sur la map vide.
+classes: heros (méthodes: move()
+	 test  (interface graphique : point qui bouge sur la map)
+v1:
+Diagrammes de classes 2 :
+Ajouter le labyrinthe et faire en sorte que le héros ne peut pas franchir les obstacles.
+classes: heros (méthodes: move()
+	 
+
+
+v2:
+Ajouter une manière pour gagner le jeux et quelques obtacles/magies et embellir l'interface graphique.
 
 
 
-BLOCK2:
-
-
-
-BLOCK3:
-
-
-
-
-BLOCK4:
+v3:
+Ajouter les monstres et leurs méthodes, et tester toutes les fonctionnalités du jeu.
