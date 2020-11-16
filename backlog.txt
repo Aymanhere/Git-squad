@@ -1,19 +1,102 @@
-v0:
-Diagramme de classes 1 :
-On réalise une interface graphique qui contient un point commandé par boutons du clavier qui bouge sur la map vide.
-classes: heros (méthodes: move()
-	 test  (interface graphique : point qui bouge sur la map)
-v1:
-Diagrammes de classes 2 :
-Ajouter le labyrinthe et faire en sorte que le héros ne peut pas franchir les obstacles.
-classes: heros (méthodes: move()
-	 
+Fonctionnalitées:
+Réaliser un jeu mono-utilisateur avec une interface graphique
+Labyrinthe:
+-Créer une grille de labyrinthe à partir d'un fichier qui contient les obstacles obstacles.
+-Créer plusieurs labyrinthe qui dépendent du niveau de difficulté séléctionné par le joueur.
+-Ajouter des cases spéciales au labyrinthe:
+		-Trésor:  qui une fois atteint, le joueur à gagné.
+		-Piège: qui cause des dégats au joueur si il passe dessus.
+		-Magique: déclanche un effet spécial si le personnage passe par cette case.
+		-Passage: qui permet au joueur de se téléporter d'une case à une autre.
+Héros:
+-Créer le héros et le placer sur la case départ et lui attribuer des coordonnés.
+-Permettre au héros de se déplacer dans les quatres directions sur les diffentes position à l'intérieur de la grille.
+-Attribuer des points de vie au personnage.
+-Le héros peut attaquer des monstres s'ils sont sur une une case adjacente.
+-Le héros perd des points de vie si attaqué par un monstre.
+-Le héros est mort et la partie terminé s'il il perd tout ses points de vie.
+-Le héros ne peut pas travarser les murs.
+-La partie est gagnée si le héros atteint le trésor.
+
+Monstres:
+-Créer des monstres et les placer sur le labyrinthe.
+-Les monstres bougent d'une manière aléatoire.
+-Les monstres possedent des points de vie.
+-Les monstres simple ne peuvent pas traverser les murs du labyrinthe.
+-Les fantômes sont des monstres qui peuvent travarser les murs.
+-Les monstres attaquent le héros automatiquement s'il est sur une case adjacentes.
+-Les monstres meurent si leurs points de vie sont épuisés.
+-Ajouter des monstres qui se déplacent de façon intélligente et suivent le héros.
+
+Interface graphique:
+-Créer une interface graphique simple.
+-Implémenter les fonctionnalités dans cette interface.
+-Améliorer l'apparence de l'interface graphique.
+
+Utilisateur:
+-Permettre à l'utilisateur de choisir l niveau de difficulté.
+-Permettre à l'utilisateur d'effectuer des entrées pour agir sur le jeux (deplacer le héros, attaquer).
+-Possibilté de faire une pause dans le jeux.
+-Possibilité de quitter le jeux.
 
 
-v2:
-Ajouter une manière pour gagner le jeux et quelques obtacles/magies et embellir l'interface graphique.
+Les Sprints:
+
+Sprint 0:(9/11/20)
+-Montage de l'équipe et organisation.
+-Mise en place de repository github et des git locaux.
+-Création du fichier readme.md lors de la création du projet github.
+-Ajout du fichier text backlog qui contient les fonctionnalités et les 5 sprints du projet.
+-Ajout du tag v0.0 à la fin de la séance
+-Faire la première version du diagramme de classe du projet.
+
+Sprint 1: (16/11/20)
+-Travail sur le développement du projet java:
+	-Fonctionnalités intégrées:-Création du labyrinthe.
+				   -Création des cases spéciales dans le labyrinthe.
+				   -Création du héros et définition de son déplacement.
+				   -Création des monstres et fantomes et defition de leurs mouvement aléatoire.
+				   -Permettre au joueur d'entrer une commande.
+-Ajout du tag v1.1 à la fin de la séance.
+-Conception du diagramme de use-case au cours de la semaine.
+-Ajout du tag v1.2 à la fin de la semaine.
+
+Sprint 2:(23/11/20)
+-Suite du travail sur le projet:
+	-Fonctionnalités intégrées:-Ajout des attaques pour le héros et le monstres.
+				   -Ajout des points de vie du héros et des monstres.
+				   -Ajout des effets des cases spéciales.
+				   -Définition des niveaux de difficultés des labyrinthes.
+				   -Possibilité de choisir un niveaux de difficulté par l'utilisateur.
+				   -Possibilité de quitter ou faire pause.
+-Ajout du tag v2.1 à la fin de la séance.
+-Conception du diagramme de de classes au cours de la semaine.
+-Ajout du tag v2.2 à la fin de la semaine.
+
+Sprint 3:(30/11/20)
+-Suite du travail sur le projet:
+	-Fonctionnalités intégrées:-Création de l'interface graphique.
+				   -Ajout des événements agissant sur l'interface graphique.
+				   -Ajouter des mouvements intélligents aux monstres
+-Ajout du tag v3.1 à la fin de la séance.
+-Conception du diagramme de de séquences au cours de la semaine.
+-Ajout du tag v3.2 à la fin de la semaine.
+
+Sprint 4:(14/12/20)
+-Suite du travail sur le projet:
+	-Fonctionnalités intégrées:-Suite du travail sur l'interface graphique.
+				   -Ajout des événements agissant sur l'interface graphique.
+				   -Définition des conditions d'arrêt du jeu (mort du héros, arrivé au trésor) et les messages à afficher.
+				   -Ajout de nouvelles propriétés magiques.
+-Ajout du tag v4.1 à la fin de la séance.
+-Ajout du tag v4.2 à la fin de la semaine.
+
+Sprint 5:(4/1/20)
+Fin du projet:-Réalisation des tests et debogage
+	      -Amélioration de l'interface graphique.
+	      -Tests de fin et validation.
+- Ajouter tag V5.1 à la fin de la séance.
+- Ajouter tag V5.2 pour la fin de sprint.
+	
 
 
-
-v3:
-Ajouter les monstres et leurs méthodes, et tester toutes les fonctionnalités du jeu.
