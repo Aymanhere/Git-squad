@@ -16,7 +16,7 @@ public class Board extends JPanel implements ActionListener{
 	public boolean running=false;
 	public Board() {
 		M=new Map();
-		p=new Heros(20,20);
+		p=new Heros(0,0);
 		m=new monster(40,40);
 		e= new magie(100,160);
 		t= new Tresor(360,340);
