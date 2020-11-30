@@ -13,9 +13,14 @@ public class Utils {
 		try {
 			BufferedReader br=new BufferedReader(new FileReader(path));
 			String line;
-			while((line=br.readLine()) !=null)
-				builder.append(line+"\n");
-			br.close();
+			int i=32;
+			while(i!=0) {
+				line=br.readLine();
+				if(line !=null){
+				   builder.append(line+"\n");
+				   i--;
+				}
+				}br.close();
 		}catch(IOException e) {
 			e.printStackTrace();
 		}

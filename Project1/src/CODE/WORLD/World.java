@@ -126,8 +126,11 @@ public class World {
 	public Tile getTile(int x,int y) {
 
 		Tile t;
-
+        if(0<=x && x<=49 && 0<=y && y<=31) {
 		t=Tile.tiles[tiles[x][y]];
+        }else {
+        	t=null;
+        }
 		if(t==null) 
 			return Tile.grassTile;
 		return t;
@@ -144,8 +147,11 @@ public class World {
 	public int getId(int x,int y) {
 		Tile t;
 	
+        if(0<=x && x<=width-1 && 0<=y && y<=height-1) {
 		t=Tile.tiles[tiles[x][y]];
-
+        }else {
+        	t=null;
+        }
 		if(t==null) 
 			return 0;
 		return t.id;
@@ -170,9 +176,14 @@ public class World {
 			tiles=new int[width][height];
 			for(int y=0;y<height;y++) {
 				for(int x=0;x<width;x++) {
-					tiles[x][y]=Utils.parseInt(tokens[(x+y*width)]);
+					if(Utils.parseInt(tokens[(x+y*width)])==0 || Utils.parseInt(tokens[(x+y*width)])==1) {
+					   tiles[x][y]=Utils.parseInt(tokens[(x+y*width)]);
+					}else{
+						tiles[x][y]=0;
+					}
+					}
 				}
-			}
+			
 			
 		} catch (ArrayIndexOutOfBoundsException e ) {
 			tiles=new int[width][height];
