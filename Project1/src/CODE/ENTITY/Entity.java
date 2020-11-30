@@ -22,8 +22,14 @@ public abstract class Entity  {
 	public Entity( Game game,World world,float x, float y, int width, int height){
 		this.world=world;
 		this.game=game;
-		this.x = x;
-		this.y = y;
+		if((20 <=x && x<=980) && (20<=y && y<=620)) {
+			this.x = x;
+			this.y = y;
+		}else {
+			this.x=20;
+			this.y=20;	
+		}
+
 		this.width = width;
 		this.height = height;
 		health = DEFAULT_HEALTH;

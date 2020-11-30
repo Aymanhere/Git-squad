@@ -16,7 +16,7 @@ import CODE.MANAGER.Game;
 
 
 public class World {
-	private int width,height;
+	private static final int width=50,height=32;
 	private int[][] tiles;
 	private int[][]piege;
 	public int spawnX,spawnY;
@@ -28,7 +28,7 @@ public class World {
 		world=this;
 		this.game=game;
         
-		entityManager=new EntityManager(game,world,new hero(game,world,20,20));
+		entityManager=new EntityManager(game,world,new hero(game,world,1500,1500));
 		Entity piege=new Piege(game,world,270,60);
 		entityManager.addEntity(piege);
 		Entity piege1=new Piege(game,world,238,60);
@@ -125,8 +125,10 @@ public class World {
 	}
 	public Tile getTile(int x,int y) {
 
-		Tile t=Tile.tiles[tiles[x][y]];
-		if(t==null)
+		Tile t;
+
+		t=Tile.tiles[tiles[x][y]];
+		if(t==null) 
 			return Tile.grassTile;
 		return t;
 	}
@@ -140,9 +142,11 @@ public class World {
 	}
 	
 	public int getId(int x,int y) {
+		Tile t;
+	
+		t=Tile.tiles[tiles[x][y]];
 
-		Tile t=Tile.tiles[tiles[x][y]];
-		if(t==null)
+		if(t==null) 
 			return 0;
 		return t.id;
 	}
@@ -160,16 +164,33 @@ public class World {
 		
 	}
 	private void loadWorld(String path) {
-		String file =Utils.loadFileAsString("res/worlds/worlds.txt");
-		String[] tokens=file.split("\\s+");
-		width=Utils.parseInt(tokens[0]);
-		height=Utils.parseInt(tokens[1]);
-		tiles=new int[width][height];
-		for(int y=0;y<height;y++) {
-			for(int x=0;x<width;x++) {
-				tiles[x][y]=Utils.parseInt(tokens[(x+y*width)+2]);
+		try {
+			String file =Utils.loadFileAsString("res/worlds/worlds.txt");
+			String[] tokens=file.split("\\s+");
+			tiles=new int[width][height];
+			for(int y=0;y<height;y++) {
+				for(int x=0;x<width;x++) {
+					tiles[x][y]=Utils.parseInt(tokens[(x+y*width)]);
+				}
 			}
+			
+		} catch (ArrayIndexOutOfBoundsException e ) {
+			tiles=new int[width][height];
+			for(int y=0;y<height;y++) {
+				for(int x=0;x<width;x++) {
+					if(x==0 || x==width-1 || y==0 || y==height-1) {
+					tiles[x][y]=1;
+					}else {
+						tiles[x][y]=0;
+					}
+				}
+			}
+
+
 		}
+
+
+		
 
 	}
 
