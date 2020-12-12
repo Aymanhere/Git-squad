@@ -8,7 +8,7 @@ import CODE.ANIMATION.Assets;
 public class Tile {
 	
 	public static Tile[] tiles=new Tile[256];
-	public static Tile grassTile=new Tile(Assets.grass,0);
+	public static Tile grassTile=new Tile(Assets.floor,0);
 	public static Tile murTile=new Tile(Assets.mur,1);
 	//public static Tile piegeTile=new Tile(Assets.piege,2);
 	//public static Tile magiqueTile=new Tile(Assets.magique,3);

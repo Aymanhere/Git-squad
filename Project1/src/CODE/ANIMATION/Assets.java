@@ -2,10 +2,12 @@ package CODE.ANIMATION;
 
 import java.awt.image.BufferedImage;
 
+import CODE.MANAGER.level_and_design;
+
 public class Assets {
 	private static final int width=32, height =32;
 	
-	public static BufferedImage hero,die,attack_down,attack_up,attack_right,attack_left,grass,mur,tresor,piege,passage,magique,teleportation_entre,teleportation_sortie;
+	public static BufferedImage hero,die,attack_down,attack_up,attack_right,attack_left,floor,mur,tresor,piege,passage,magique,teleportation_entre,teleportation_sortie;
 	public static BufferedImage[] win,hero_down,hero_up,hero_right,hero_left,fantome,monstre,monstre_attack,fantome_attack,health;
 	public static void init() {
 		SpriteSheet sheet =new SpriteSheet(ImageLoader.loadImage("textures/element.png"));
@@ -64,8 +66,15 @@ public class Assets {
 		
 		hero=sheet.crop(0, 0, width, height);
 		die=sheet.crop(4*width,8* height, width, height);
-		grass=sheet.crop(3*width, 2*height,width, height);
+		if (level_and_design.design==1) {
+		floor=sheet.crop(3*width, 2*height,width, height);
 		mur=sheet.crop(4*width, 2*height,width, height);
+		}
+		if (level_and_design.design==2) {
+		floor=sheet.crop(0*width, 9*height,width, height);
+		mur=sheet.crop(1*width, 9*height,width, height);
+		}
+		
 		piege=sheet.crop(0, 3*height,width, height);
 		teleportation_entre=sheet.crop(3*width, 3*height,width, height);
 		teleportation_sortie=sheet.crop(4*width, 3*height,width, height);

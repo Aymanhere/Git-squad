@@ -78,6 +78,13 @@ public class Monstre extends Creature {
 
 	@Override
 	public void tick() {
+		if(game.getKeyManger().pause) {
+			game.P=false;
+		}
+		if(game.getKeyManger().continu) {
+			game.P=true;
+		}
+		if (game.P) {
 		animhealth.tick();
 		animmonstre.tick();
 		attackmonstre.tick();
@@ -85,6 +92,7 @@ public class Monstre extends Creature {
 		getInput();
 		moveM();
 		checkAttacks();
+		}
 		
 	}
 	private void checkAttacks() {

@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import CODE.ANIMATION.Animation;
 import CODE.ANIMATION.Assets;
 import CODE.MANAGER.Game;
+import CODE.MANAGER.MainMenu;
 import CODE.WORLD.Tile;
 import CODE.WORLD.World;
 
@@ -208,8 +209,16 @@ public class hero extends Creature{
 	    
 	}
 	
+
 	@Override
 	public void tick() {
+			if (game.P) {
+			if(game.getKeyManger().pause) {
+				game.P=false;
+			}
+			if(game.getKeyManger().continu) {
+				game.P=true;
+			}
 		animhealth.tick();
 		animdown.tick();
 		animup.tick();
@@ -218,6 +227,8 @@ public class hero extends Creature{
 		getInput();
 		moveh();
 		checkAttacks();
+		}
+		
 		
 	}
 

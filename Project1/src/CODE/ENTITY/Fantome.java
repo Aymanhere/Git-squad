@@ -11,7 +11,6 @@ import CODE.WORLD.Tile;
 import CODE.WORLD.World;
 
 public class Fantome extends Creature {
-
 	private Animation animfantome;
 	private long lastTime=System.currentTimeMillis(),timer=0;
 	private int a=(int) (Math.random()*9);
@@ -84,12 +83,20 @@ public class Fantome extends Creature {
 	}
 	@Override
 	public void tick() {
+		if(game.getKeyManger().pause) {
+			game.P=false;
+		}
+		if(game.getKeyManger().continu) {
+			game.P=true;
+		}
+		if (game.P) {
 		animhealth.tick();
 		animfantome.tick();
 		attackfantome.tick();
 		getInput();
 		move();
 		checkAttacks();
+		}
 		
 	}
 

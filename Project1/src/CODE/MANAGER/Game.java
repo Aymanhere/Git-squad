@@ -12,7 +12,6 @@ import CODE.STATE.State;
 
 
 public class Game implements Runnable {
-	
 	private Display display;
 	public String title;
 	public int width,height;
@@ -26,9 +25,11 @@ public class Game implements Runnable {
 	private State menuState;
 
 	private KeyManager keyManager;
+	public static boolean P;
 	
 	
 	public Game(String title, int width,int height) {
+		P=true;
 		this.width=width;
 		this.height=height;
 		this.title=title;
@@ -86,7 +87,15 @@ public class Game implements Runnable {
 		int ticks=0;
 		
 		init();
+		int k=0;
 		while(running) {
+			if(getKeyManger().pause) {
+				P=false;
+				k+=1;
+				if (k==1){
+					new MainMenu().frame.setVisible(true);}
+			}
+
 			now=System.nanoTime();
 			delta+=(now -lastTime)/timePerTick;
 			timer+=now - lastTime;
