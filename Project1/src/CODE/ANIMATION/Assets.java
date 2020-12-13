@@ -70,7 +70,7 @@ public class Assets {
 		floor=sheet.crop(3*width, 2*height,width, height);
 		mur=sheet.crop(4*width, 2*height,width, height);
 		}
-		if (level_and_design.design==2) {
+		else if (level_and_design.design==2) {
 		floor=sheet.crop(0*width, 9*height,width, height);
 		mur=sheet.crop(1*width, 9*height,width, height);
 		}

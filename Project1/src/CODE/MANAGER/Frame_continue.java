@@ -45,7 +45,7 @@ public class Frame_continue {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JButton btnNewButton = new JButton("How to play");
+		/*JButton btnNewButton = new JButton("How to play");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new hw_play_continue().frame.setVisible(true);
@@ -54,7 +54,7 @@ public class Frame_continue {
 		frame.getContentPane().setLayout(null);
 		//n2
 		btnNewButton.setBounds(144, 52, 139, 29);
-		frame.getContentPane().add(btnNewButton);
+		frame.getContentPane().add(btnNewButton);*/
 		Image img= new ImageIcon("textures/heroimg.jpg").getImage();
 		
 		JButton btnNewButton_2 = new JButton("Continue");
@@ -64,6 +64,7 @@ public class Frame_continue {
 				con=true;
 			}
 		});
+		frame.getContentPane().setLayout(null);
 		btnNewButton_2.setBounds(144, 150, 139, 50);
 		frame.getContentPane().add(btnNewButton_2);
 		
@@ -77,7 +78,7 @@ public class Frame_continue {
 				
 			}
 		});
-		btnNewButton_1.setBounds(154, 97, 115, 29);
+		btnNewButton_1.setBounds(144, 89, 139, 45);
 		frame.getContentPane().add(btnNewButton_1);
 	}
 }

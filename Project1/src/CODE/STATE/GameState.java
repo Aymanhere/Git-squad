@@ -30,10 +30,10 @@ public class GameState extends State {
 		if (level_and_design.level==1) {
 		world=new World1(game,"res/worlds/worlds.txt");
 		}
-		if (level_and_design.level==2) {
+		else if (level_and_design.level==2) {
 			world=new World2(game,"res/worlds/worlds2.txt");
 			}
-		if (level_and_design.level==3) {
+		else if (level_and_design.level==3) {
 			world=new World3(game,"res/worlds/worlds3.txt");
 			}
 		else {
