@@ -10,7 +10,6 @@ import java.awt.Color;
 import java.awt.Label;
 import java.awt.Font;
 import java.awt.Image;
-
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.GroupLayout;
@@ -38,7 +37,6 @@ public class MainMenu {
 
 	public JFrame frame;
 	private JTextField textField_1;
-	Game game = new Game("Game",1000,640);
 
 	/**
 	 * Launch the application.
@@ -91,7 +89,7 @@ public class MainMenu {
 		JButton btnNewButton_1= new JButton("Play");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new level_and_design(game).frame.setVisible(true);
+				new level_and_design().frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -106,12 +104,10 @@ public class MainMenu {
 		JButton btnNewButton_2 = new JButton("Continue");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			    Game.P=true;
 				frame.setVisible(false);
 			}
 		});
-		btnNewButton_2.setBounds(150, 142, 115, 29);
-		frame.getContentPane().add(btnNewButton_2);
+		
 
 	}
 }

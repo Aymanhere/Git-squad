@@ -36,7 +36,10 @@ public class GameState extends State {
 		if (level_and_design.level==3) {
 			world=new World3(game,"res/worlds/worlds3.txt");
 			}
-		
+		else {
+			System.out.println("The level is by default ");
+			world=new World1(game,"res/worlds/worlds.txt");
+		}
 		/*Hero=new hero(game,world,100,100);
 		monstre=new Monstre(game,world,400,400);
 		fantome=new Fantome(game,world,300,300);*/

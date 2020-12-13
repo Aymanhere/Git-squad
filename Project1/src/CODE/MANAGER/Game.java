@@ -2,6 +2,7 @@ package CODE.MANAGER;
 
 
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 
 
@@ -17,7 +18,7 @@ public class Game implements Runnable {
 	public int width,height;
 	private Thread thread;
 	public boolean running=false;
-	
+	int k=0;
 	private BufferStrategy bs;
 	private Graphics g;
 
@@ -25,7 +26,7 @@ public class Game implements Runnable {
 	private State menuState;
 
 	private KeyManager keyManager;
-	public static boolean P;
+	public  boolean P;
 	
 	
 	public Game(String title, int width,int height) {
@@ -87,15 +88,21 @@ public class Game implements Runnable {
 		int ticks=0;
 		
 		init();
-		int k=0;
 		while(running) {
 			if(getKeyManger().pause) {
-				P=false;
+				keyManager.keys[KeyEvent.VK_P]=false;
+				this.P=false;
+				if (k==0){	
+					new Frame_continue().frame.setVisible(true);
+					}
 				k+=1;
-				if (k==1){
-					new MainMenu().frame.setVisible(true);}
 			}
-
+			else if (Frame_continue.con) {
+			   new Frame_continue().frame.setVisible(false);
+			   this.P=true;
+			   Frame_continue.con=false;
+			    k=0;
+			}
 			now=System.nanoTime();
 			delta+=(now -lastTime)/timePerTick;
 			timer+=now - lastTime;
@@ -108,7 +115,7 @@ public class Game implements Runnable {
 				
 			}
 			if(timer>=1000000000) {
-				System.out.println("Ticks and Frames: "+ticks);
+				//System.out.println("Ticks and Frames: "+ticks);
 				ticks=0;
 				timer=0;
 			}

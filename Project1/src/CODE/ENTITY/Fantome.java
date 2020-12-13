@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 
 import CODE.ANIMATION.Animation;
 import CODE.ANIMATION.Assets;
+import CODE.MANAGER.Frame_continue;
 import CODE.MANAGER.Game;
 import CODE.WORLD.Tile;
 import CODE.WORLD.World;
@@ -83,12 +84,13 @@ public class Fantome extends Creature {
 	}
 	@Override
 	public void tick() {
-		if(game.getKeyManger().pause) {
-			game.P=false;
+		/*if(game.getKeyManger().pause) {
+			   game.P=false;
+			 
 		}
-		if(game.getKeyManger().continu) {
+		/*if (Frame_continue.con) {
 			game.P=true;
-		}
+		}*/
 		if (game.P) {
 		animhealth.tick();
 		animfantome.tick();

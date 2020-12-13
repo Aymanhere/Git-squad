@@ -14,7 +14,7 @@ public class World1 extends World{
 
 	public World1(Game game, String path) {
 		super(game, path);
-		entityManager=new EntityManager(game,world,new hero(game,world,1500,1500));
+		entityManager=new EntityManager(game,world,new hero(game,world,20,20));
 		Entity piege=new Piege(game,world,270,60);
 		entityManager.addEntity(piege);
 		Entity piege1=new Piege(game,world,238,60);

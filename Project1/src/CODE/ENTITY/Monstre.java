@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 
 import CODE.ANIMATION.Animation;
 import CODE.ANIMATION.Assets;
+import CODE.MANAGER.Frame_continue;
 import CODE.MANAGER.Game;
 import CODE.WORLD.Tile;
 import CODE.WORLD.World;
@@ -78,12 +79,12 @@ public class Monstre extends Creature {
 
 	@Override
 	public void tick() {
-		if(game.getKeyManger().pause) {
-			game.P=false;
-		}
-		if(game.getKeyManger().continu) {
-			game.P=true;
-		}
+		//if(game.getKeyManger().pause) {
+		//	game.P=false;
+		//}
+		//if (Frame_continue.con) {
+			//game.P=true;
+		//}
 		if (game.P) {
 		animhealth.tick();
 		animmonstre.tick();

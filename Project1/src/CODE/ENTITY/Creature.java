@@ -14,7 +14,8 @@ public abstract class Creature extends Entity{
 
 	
 	protected float speed;
-	protected float xMove, yMove;
+	public float xMove;
+	public float yMove;
 
 	public Creature(Game game,World world,float x, float y, int width, int height) {
 		super(game,world,x, y, width, height);
@@ -25,7 +26,7 @@ public abstract class Creature extends Entity{
 	}
 
 
-	protected boolean collisionWithTile(int x, int y){
+	public boolean collisionWithTile(int x, int y){
 		return world.getTile(x, y).isSolid(world.getId(x, y));
 	}
 

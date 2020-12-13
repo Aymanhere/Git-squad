@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 
 import CODE.ANIMATION.Animation;
 import CODE.ANIMATION.Assets;
+import CODE.MANAGER.Frame_continue;
 import CODE.MANAGER.Game;
 import CODE.MANAGER.MainMenu;
 import CODE.WORLD.Tile;
@@ -212,13 +213,13 @@ public class hero extends Creature{
 
 	@Override
 	public void tick() {
-			if (game.P) {
-			if(game.getKeyManger().pause) {
+			/*if(game.getKeyManger().pause) {
 				game.P=false;
 			}
-			if(game.getKeyManger().continu) {
+			if (Frame_continue.con) {
 				game.P=true;
-			}
+			}*/
+		if (game.P) {
 		animhealth.tick();
 		animdown.tick();
 		animup.tick();

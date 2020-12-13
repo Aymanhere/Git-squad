@@ -9,8 +9,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class level_and_design {
-    public static int level;
-    public static int design;
+    public static int level=0;
+    public static int design=0;
 	protected JFrame frame;
 
 	/**
@@ -32,7 +32,7 @@ public class level_and_design {
 	/**
 	 * Create the application.
 	 */
-	public level_and_design(Game game) {
+	public level_and_design() {
 		initialize();
 	}
 
@@ -52,7 +52,9 @@ public class level_and_design {
 		JButton btnNewButton = new JButton("Start");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Game game = new Game("Game",1000,640);
 				game.start();
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(162, 170, 115, 29);

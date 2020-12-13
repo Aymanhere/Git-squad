@@ -11,11 +11,12 @@ public abstract class Entity  {
 	
 	protected World world;
 	protected Game game;
-	protected float x, y;
+	public float x;
+	public float y;
 	protected int width, height;
-	protected Rectangle bounds;
+	public Rectangle bounds;
 	public static final int DEFAULT_HEALTH = 15;
-	protected int health;
+	public int health;
 	protected boolean active=true;
 	
 
@@ -26,6 +27,7 @@ public abstract class Entity  {
 			this.x = x;
 			this.y = y;
 		}else {
+			System.out.println("l'objet est placé par défaut (20,20)");
 			this.x=20;
 			this.y=20;	
 		}
@@ -124,6 +126,7 @@ public abstract class Entity  {
 	public void setBounds(Rectangle bounds) {
 		this.bounds = bounds;
 	}
+
 
 
 }

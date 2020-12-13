@@ -74,6 +74,11 @@ public class Assets {
 		floor=sheet.crop(0*width, 9*height,width, height);
 		mur=sheet.crop(1*width, 9*height,width, height);
 		}
+		else {
+			floor=sheet.crop(3*width, 2*height,width, height);
+			mur=sheet.crop(4*width, 2*height,width, height);
+			System.out.println("The theme is by default ");
+		}
 		
 		piege=sheet.crop(0, 3*height,width, height);
 		teleportation_entre=sheet.crop(3*width, 3*height,width, height);
