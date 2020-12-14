@@ -6,7 +6,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 public class Display {
-	private JFrame frame;
+	public JFrame frame;
 	private Canvas canvas;
 	private String title;
 	private int width,height;

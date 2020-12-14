@@ -2,7 +2,9 @@ package CODE.WORLD;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Arrays;
 
+import CODE.ANIMATION.Assets;
 import CODE.ENTITY.Entity;
 
 import CODE.ENTITY.Fantome;
@@ -25,11 +27,22 @@ public abstract class World {
 	public EntityManager entityManager;
 	String file;
 	private  String path;
+    public  Tile grassTile;
+    public  Tile murTile;
+	private level_and_design ld;
 	
-	public World(Game game,String path) {
+	public World(Game game,String path,level_and_design ld) {
 		world=this;
 		this.game=game;
 		this.path=path;
+		this.ld=ld;
+		if(ld.design==1) {
+			grassTile=new Tile(Assets.floor,0);
+			murTile=new Tile(Assets.mur,1);
+		}else {
+			grassTile=new Tile(Assets.floor1,0);
+			murTile=new Tile(Assets.mur1,1);
+		}
 	}
 
 	public int[][] getPiege() {
@@ -61,7 +74,7 @@ public abstract class World {
         	t=null;
         }
 		if(t==null) 
-			return Tile.grassTile;
+			return grassTile;
 		return t;
 	}
 	public Boolean Bordure(int x,int y) {
@@ -102,7 +115,11 @@ public abstract class World {
 		try {
 			
 			file =Utils.loadFileAsString(path);
-			String[] tokens=file.split("\\s+");
+			 String [] tokens=file.split("[,; \\s \t\n\r]+");
+            if(tokens.length>width*height) {
+            	String[] a= {};
+            	tokens=a;
+            }
 			tiles=new int[width][height];
 			for(int y=0;y<height;y++) {
 				for(int x=0;x<width;x++) {
@@ -116,16 +133,19 @@ public abstract class World {
 			
 			
 		} catch (ArrayIndexOutOfBoundsException e ) {
+			System.out.println("le monde est généré par défaut");
+			file =Utils.loadFileAsString("res/worlds/default_world.txt");
+			String[] tokens=file.split("\\s+");
 			tiles=new int[width][height];
 			for(int y=0;y<height;y++) {
 				for(int x=0;x<width;x++) {
-					if(x==0 || x==width-1 || y==0 || y==height-1) {
-					tiles[x][y]=1;
-					}else {
+					if(Utils.parseInt(tokens[(x+y*width)])==0 || Utils.parseInt(tokens[(x+y*width)])==1) {
+					   tiles[x][y]=Utils.parseInt(tokens[(x+y*width)]);
+					}else{
 						tiles[x][y]=0;
 					}
+					}
 				}
-			}
 
 
 		}

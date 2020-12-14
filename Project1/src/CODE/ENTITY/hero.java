@@ -42,9 +42,11 @@ public class hero extends Creature{
 	}
 	
 	public void moveh(){
-		if(!checkEntityCollisions(xMove,0f))
+		int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
+		int ty = (int) (y + yMove + bounds.y) / Tile.TILEHEIGHT;
+		if(!checkEntityCollisions(xMove,0f) && tx!=0 && tx!=50)
 		    moveXh();
-		if(!checkEntityCollisions(0f,yMove))
+		if(!checkEntityCollisions(0f,yMove)&& ty!=0 && ty!=30)
 		    moveYh();
 	}
 	private void getInput() {
@@ -63,17 +65,21 @@ public class hero extends Creature{
 	public void moveXh(){
 		if(xMove > 0){//Moving right
 			int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
-
-			if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
-					!collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT)){
-				x += xMove;
-			}
+ 
+				if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+						!collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT)){
+			
+						x += xMove;
+				}
+			
 		}else if(xMove < 0){//Moving left
 			int tx = (int) (x + xMove + bounds.x) / Tile.TILEWIDTH;
 
 			if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
 					!collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT)){
 				x += xMove;
+			}else if(tx==50) {
+				xMove=0;
 			}
 		}
 	}

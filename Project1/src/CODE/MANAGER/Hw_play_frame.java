@@ -11,33 +11,13 @@ import javax.swing.JButton;
 public class Hw_play_frame {
 
 	protected JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Hw_play_frame window = new Hw_play_frame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
-	public Hw_play_frame() {
+    private Game game;
+	public Hw_play_frame(Game game) {
+		this.game=game;
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+
 	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
@@ -56,8 +36,13 @@ public class Hw_play_frame {
 		JButton btnNewButton = new JButton("Back to play");
 		btnNewButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				new MainMenu().frame.setVisible(true);
+				if(game.on==0) {
+				game.window.frame.setVisible(true);
 				frame.setVisible(false);
+				}else {
+					game.continu.frame.setVisible(true);
+					frame.setVisible(false);
+				}
 			}
 		});
 		

@@ -9,11 +9,12 @@ import CODE.ENTITY.Teleportation;
 import CODE.ENTITY.Tresor;
 import CODE.ENTITY.hero;
 import CODE.MANAGER.Game;
+import CODE.MANAGER.level_and_design;
 
 public class World2 extends World {
 
-	public World2(Game game, String path) {
-		super(game, path);
+	public World2(Game game, String path,level_and_design ld) {
+		super(game, path,ld);
 		entityManager=new EntityManager(game,world,new hero(game,world,1500,1500));
 		Entity piege=new Piege(game,world,270,60);
 		entityManager.addEntity(piege);

@@ -12,8 +12,9 @@ import CODE.STATE.MenuState;
 import CODE.STATE.State;
 
 
+
 public class Game implements Runnable {
-	private Display display;
+	public Display display;
 	public String title;
 	public int width,height;
 	private Thread thread;
@@ -21,12 +22,19 @@ public class Game implements Runnable {
 	int k=0;
 	private BufferStrategy bs;
 	private Graphics g;
+	public int on=0;
 
 	private State gameState;
 	private State menuState;
 
 	private KeyManager keyManager;
 	public  boolean P;
+	public level_and_design ld=new level_and_design(this);
+	public MainMenu window=new MainMenu(this);
+	public Hw_play_frame  Hw=new Hw_play_frame(this);
+	public Frame_continue continu=new Frame_continue(this);
+
+	
 	
 	
 	public Game(String title, int width,int height) {
@@ -89,16 +97,17 @@ public class Game implements Runnable {
 		
 		init();
 		while(running) {
+			on+=1;
 			if(getKeyManger().pause) {
 				keyManager.keys[KeyEvent.VK_P]=false;
 				this.P=false;
 				if (k==0){	
-					new Frame_continue().frame.setVisible(true);
+					continu.frame.setVisible(true);
 					}
 				k+=1;
 			}
 			else if (Frame_continue.con) {
-			   new Frame_continue().frame.setVisible(false);
+			   continu.frame.setVisible(false);
 			   this.P=true;
 			   Frame_continue.con=false;
 			    k=0;
@@ -121,6 +130,7 @@ public class Game implements Runnable {
 			}
 			
 		}
+		on=0;
 		stop();
 		
 	}

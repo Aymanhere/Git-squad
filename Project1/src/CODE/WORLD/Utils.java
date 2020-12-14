@@ -13,13 +13,10 @@ public class Utils {
 		try {
 			BufferedReader br=new BufferedReader(new FileReader(path));
 			String line;
-			int i=32;
-			while(i!=0) {
-				line=br.readLine();
-				if(line !=null){
-				   builder.append(line+"\n");
-				   i--;
-				}
+			while((line=br.readLine())!=null) {
+				
+				builder.append(line+"\n");
+	
 				}br.close();
 		}catch(IOException e) {
 			e.printStackTrace();
@@ -30,7 +27,7 @@ public class Utils {
 		try {
 			return Integer.parseInt(number);
 		}catch(NumberFormatException e) {
-			e.printStackTrace();
+			System.out.println("S'il y a des lettre dans une case précise cette dernière prend la valeur 0 par défaut ");
 			return 0;
 		}
 		}

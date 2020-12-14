@@ -19,26 +19,23 @@ import CODE.WORLD.World2;
 import CODE.WORLD.World3;
 
 public class GameState extends State {
-	/*private hero Hero;
-	private Monstre monstre;
-	
-	private Fantome fantome;*/
+
 	protected World world;
 	
 	public GameState(Game game) {
 		super(game);
 		if (level_and_design.level==1) {
-		world=new World1(game,"res/worlds/worlds.txt");
+		world=new World1(game,"res/worlds/worlds.txt",game.ld);
 		}
 		else if (level_and_design.level==2) {
-			world=new World2(game,"res/worlds/worlds2.txt");
+			world=new World2(game,"res/worlds/worlds2.txt",game.ld);
 			}
 		else if (level_and_design.level==3) {
-			world=new World3(game,"res/worlds/worlds3.txt");
+			world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 			}
 		else {
 			System.out.println("The level is by default ");
-			world=new World1(game,"res/worlds/worlds.txt");
+			world=new World1(game,"res/worlds/worlds.txt",game.ld);
 		}
 		/*Hero=new hero(game,world,100,100);
 		monstre=new Monstre(game,world,400,400);

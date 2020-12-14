@@ -16,7 +16,7 @@ class test_hero {
 	@Test
 	void testXY() {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt");
+		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		hero h1=new hero(game,world,1500,1500);
 		h1.xMove=15;
 		h1.moveh();
@@ -28,7 +28,7 @@ class test_hero {
 	@Test
 	void testXnegative() {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt");
+		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		hero h2=new hero(game,world,1500,1500);
 		h2.xMove=-9;//28-9<20 donc collision 
 		h2.moveh();
@@ -37,7 +37,7 @@ class test_hero {
 @Test
 	void testCollision() {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt");
+		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		hero h3=new hero(game,world,1500,1500);
 		h3.xMove=-10;
 		h3.moveh();
@@ -49,7 +49,7 @@ class test_hero {
 	@Test
 	void testSortie() {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt");
+		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		hero h4=new hero(game,world,1500,1500);
 		h4.xMove=-3;
 		int tx = (int) (h4.x + h4.xMove + h4.bounds.x) / Tile.TILEWIDTH;
@@ -63,7 +63,7 @@ class test_hero {
 	@Test
 	 void testyMovenegative() {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt");
+		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		hero h5=new hero(game,world,1500,1500);
 		h5.yMove=20;
 		h5.moveh();
@@ -75,7 +75,7 @@ class test_hero {
 	@Test
 	 void testySortie() {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt");
+		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		hero h5=new hero(game,world,1500,1500);
 		//h5.yMove=20;
 		h5.yMove=-1;

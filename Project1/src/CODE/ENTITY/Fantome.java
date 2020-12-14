@@ -46,7 +46,7 @@ public class Fantome extends Creature {
 		if(xMove > 0){//Moving right
 			int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
 
-			if(tx==49){
+			if(tx==50){
 				x -= xMove;
 			}else {
 				x+=xMove;
@@ -75,7 +75,7 @@ public class Fantome extends Creature {
 		}else if(yMove > 0){//Down
 			int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.TILEHEIGHT;
 
-			if(ty==31){
+			if(ty==32){
 				y -= yMove;
 			}else {
 				y += yMove;

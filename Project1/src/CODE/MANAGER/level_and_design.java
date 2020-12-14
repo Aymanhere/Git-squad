@@ -4,41 +4,26 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import CODE.ANIMATION.Assets;
+import CODE.WORLD.Tile;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class level_and_design {
-    public static int level=0;
-    public static int design=0;
+    public static  int level=1;
+    public  int design=1;
 	protected JFrame frame;
+    private Game game;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					level_and_design window = new level_and_design();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the application.
-	 */
-	public level_and_design() {
+	public level_and_design(Game game) {
+		this.game=game;
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
@@ -52,7 +37,7 @@ public class level_and_design {
 		JButton btnNewButton = new JButton("Start");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Game game = new Game("Game",1000,640);
+			
 				game.start();
 				frame.setVisible(false);
 			}
@@ -90,7 +75,11 @@ public class level_and_design {
 		JButton btnNewButton_4 = new JButton("Grass floor");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				design=1;
+			        design=1;
+					
+			
+					
+				
 			}
 		});
 		btnNewButton_4.setBounds(282, 63, 115, 29);
@@ -100,6 +89,7 @@ public class level_and_design {
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				design=2;
+			
 			}
 		});
 		btnNewButton_5.setBounds(282, 97, 115, 29);
