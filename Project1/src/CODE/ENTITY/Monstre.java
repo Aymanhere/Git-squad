@@ -22,19 +22,24 @@ public class Monstre extends Creature {
 	private long lastTime=System.currentTimeMillis(),timer=0;
 	private long lastAttackTimer,attackCooldown=1500,attackTimer=attackCooldown;
 	private Animation animhealth;
+	private double distance;
+	private int signex;
+	private int signey;
 	public Monstre(Game game,World world,float x, float y) {
 		super(game,world,x, y,Creature.DEFAULT_CREATURE_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
 		bounds.x=1;
 		bounds.y=0;
 		bounds.width=30;
 		bounds.height=31;
-
+		
 		animmonstre=new Animation(500,Assets.monstre);
 		attackmonstre=new Animation(500,Assets.monstre_attack);
 		animhealth=new Animation(500,Assets.health);
 
 	}
 	public void moveM(){
+		
+		
 		int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
 		int ty = (int) (y + yMove + bounds.y) / Tile.TILEHEIGHT;
 		if(!checkEntityCollisionsHero(xMove,0f) && tx!=0 && tx!=50)
@@ -45,6 +50,7 @@ public class Monstre extends Creature {
 	}
 
 	public void moveXM(){
+	
 		if(xMove > 0){//Moving right
 			int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
 
@@ -52,7 +58,8 @@ public class Monstre extends Creature {
 					!collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT)){
 				x += xMove;
 			}
-		}else if(xMove < 0){//Moving left
+		}
+		if(xMove < 0){//Moving left
 			int tx = (int) (x + xMove + bounds.x) / Tile.TILEWIDTH;
 
 			if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
@@ -70,7 +77,8 @@ public class Monstre extends Creature {
 					!collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty)){
 				y += yMove;
 			}
-		}else if(yMove > 0){//Down
+		}
+		if(yMove > 0){//Down
 			int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.TILEHEIGHT;
 
 			if(!collisionWithTile((int) (x + bounds.x) / Tile.TILEWIDTH, ty) &&
@@ -122,9 +130,19 @@ public class Monstre extends Creature {
 	
 
 	private void getInput() {
-
 		xMove=0;
 		yMove=0;
+		
+		distance= Math.sqrt(  Math.pow((x-world.getEntityManager().getHero().x),2)  +  Math.pow((y-world.getEntityManager().getHero().y),2)   );
+		signex=(int) Math.signum(world.getEntityManager().getHero().x-x);
+		signey=(int) Math.signum(world.getEntityManager().getHero().y-y);
+		
+		if (distance<100){
+			xMove += signex*speed;
+			yMove += signey*speed;
+		}
+		else {
+		
 		int[] L={-1,1,-1,-1,1,0,-1,1,0};
 		timer+=System.currentTimeMillis() - lastTime;
 		int[] T= {1000,2000,3000,4000,5000,1500,3500,4500,2500};
@@ -139,12 +157,11 @@ public class Monstre extends Creature {
 		
 		yMove=L[b]*speed;
 		
-		
-
-		
+	
 		
 		lastTime=System.currentTimeMillis();
 
+		}
 	}
 	private BufferedImage getCurrenthealth() {
 		if(health==15) {

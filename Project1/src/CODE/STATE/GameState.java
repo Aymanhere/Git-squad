@@ -1,6 +1,8 @@
 package CODE.STATE;
 
 import java.awt.Graphics;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 import CODE.ENTITY.Entity;
 import CODE.ENTITY.Fantome;
@@ -25,24 +27,47 @@ public class GameState extends State {
 	public GameState(Game game) {
 		super(game);
 		if (level_and_design.level==1) {
-		world=new World1(game,"res/worlds/worlds.txt",game.ld);
+		String path="res/worlds/worlds.11.txt";
+		File file=new File(path);
+		if (!file.exists()) {			
+			world=new World1(game,"res/worlds/default_world.txt",game.ld);
+			System.out.println("File doesn't exists");
+		}else {
+			world=new World1(game,path,game.ld);			
+		}
 		}
 		else if (level_and_design.level==2) {
-			world=new World2(game,"res/worlds/worlds2.txt",game.ld);
-			}
+			
+		String path="res/worlds/worlds2.txt";
+		File file=new File(path);
+		if (!file.exists()) {			
+			world=new World2(game,"res/worlds/default_world.txt",game.ld);
+			System.out.println("File doesn't exists");
+		}else {
+			world=new World2(game,path,game.ld);			
+		}
+		}
 		else if (level_and_design.level==3) {
-			world=new World3(game,"res/worlds/worlds3.txt",game.ld);
-			}
+		String path="res/worlds/worlds3.txt";
+		File file=new File(path);
+		if (!file.exists()) {			
+			world=new World3(game,"res/worlds/default_world.txt",game.ld);
+			System.out.println("File doesn't exists");
+		}else {
+			world=new World3(game,path,game.ld);			
+		}
+		}
 		else {
 			System.out.println("The level is by default ");
 			world=new World1(game,"res/worlds/worlds.txt",game.ld);
+		}
 		}
 		/*Hero=new hero(game,world,100,100);
 		monstre=new Monstre(game,world,400,400);
 		fantome=new Fantome(game,world,300,300);*/
 		
 		
-	}
+	
 
 
 	@Override

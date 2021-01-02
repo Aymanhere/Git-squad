@@ -21,7 +21,9 @@ public class Fantome extends Creature {
 	private Animation attackfantome;
 	private Boolean Attack=false;
 	private Animation animhealth;
-	
+	private double distance;
+	private int signex;
+	private int signey;
 	
 
 
@@ -124,6 +126,16 @@ private void checkAttacks() {
 	private void getInput() {
 		xMove=0;
 		yMove=0;
+		
+		distance= Math.sqrt(  Math.pow((x-world.getEntityManager().getHero().x),2)  +  Math.pow((y-world.getEntityManager().getHero().y),2)   );
+		signex=(int) Math.signum(world.getEntityManager().getHero().x-x);
+		signey=(int) Math.signum(world.getEntityManager().getHero().y-y);
+		
+		if (distance<100){
+			xMove += signex*speed;
+			yMove += signey*speed;
+		}
+		else {
 		int[] L={-1,1,-1,-1,1,0,-1,1,0};
 		timer+=System.currentTimeMillis() - lastTime;
 		int[] T= {1000,2000,3000,4000,5000,1500,3500,4500,2500};
@@ -143,6 +155,7 @@ private void checkAttacks() {
 		
 		
 		lastTime=System.currentTimeMillis();
+		}
 	}
 	private BufferedImage getCurrenthealth() {
 		if(health==15) {
