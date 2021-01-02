@@ -29,6 +29,7 @@ public class Utils {
 		}catch(NumberFormatException e) {
 			System.out.println("S'il y a des lettre dans une case précise cette dernière prend la valeur 0 par défaut ");
 			return 0;
+			
 		}
 		}
 }
