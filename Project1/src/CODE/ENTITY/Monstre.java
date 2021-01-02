@@ -18,7 +18,7 @@ public class Monstre extends Creature {
 	private int a=(int) (Math.random()*9);
 	private int b=(int) (Math.random()*9);
 	private int c=(int) (Math.random()*9);
-	private Boolean Attack=false;
+	public Boolean Attack=false;
 	private long lastTime=System.currentTimeMillis(),timer=0;
 	private long lastAttackTimer,attackCooldown=1500,attackTimer=attackCooldown;
 	private Animation animhealth;
@@ -107,7 +107,7 @@ public class Monstre extends Creature {
 		}
 		
 	}
-	private void checkAttacks() {
+	public void checkAttacks() {
 		attackTimer+=System.currentTimeMillis()-lastAttackTimer;
 		lastAttackTimer=System.currentTimeMillis();
 		if(attackTimer<attackCooldown) {
