@@ -12,12 +12,12 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
 
-public class WIN{
+public class LOSE{
 
 	public JFrame frame;
 	public static boolean con=false;
     private Game game;
-	public WIN(Game game) {
+	public LOSE(Game game) {
 		this.game=game;
 		initialize();
 	}
@@ -39,7 +39,7 @@ public class WIN{
 		btnNewButton_1.setBackground(Color.LIGHT_GRAY);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				    game.Win.frame.setVisible(false);
+				    game.lose.frame.setVisible(false);
 				    game.display.frame.setVisible(false);
 				    game.running=false;
 				    game=new Game("Game",1000,640);
@@ -53,8 +53,8 @@ public class WIN{
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(WIN.class.getResource("/textures/newwin.png")));
-		lblNewLabel.setBounds(63, 16, 309, 165);
+		lblNewLabel.setIcon(new ImageIcon(LOSE.class.getResource("/textures/GAME_Over1.jpg")));
+		lblNewLabel.setBounds(75, 16, 309, 165);
 		frame.getContentPane().add(lblNewLabel);
 	}
 }

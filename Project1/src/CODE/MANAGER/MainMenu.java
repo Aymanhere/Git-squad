@@ -39,7 +39,7 @@ public class MainMenu {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/textures/heroimg.jpg")));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/textures/HERO.png")));
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 600, 500);

@@ -33,7 +33,8 @@ public class Game implements Runnable {
 	public MainMenu window=new MainMenu(this);
 	public Hw_play_frame  Hw=new Hw_play_frame(this);
 	public Frame_continue continu=new Frame_continue(this);
-
+	public WIN Win=new WIN(this);
+	public LOSE lose=new LOSE(this);
 	
 	
 	

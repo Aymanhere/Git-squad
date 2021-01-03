@@ -153,7 +153,7 @@ public class hero extends Creature{
 
 	
 	private BufferedImage getCurrentAnimationFrame() {
-		if(health>=0) {
+		if(health>0) {
 		if(xMove<0) {
 			return animleft.getCurrentFrame();
 		}else if(xMove>0){
@@ -244,7 +244,7 @@ public class hero extends Creature{
 	public void isdead() {
 	if (health<=0) {
 		game.P=false;
-		game.continu.frame.setVisible(true);
+		game.lose.frame.setVisible(true);
 		}
 	}
 

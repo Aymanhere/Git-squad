@@ -39,7 +39,8 @@ public class Tresor extends StaticEntity {
 			game.P=false;
 			timetick+=1;
 			if (timetick>50){
-				game.continu.frame.setVisible(true);
+				game.Win.frame.setVisible(true);
+				timetick=0;
 			}
 		}
 	}
