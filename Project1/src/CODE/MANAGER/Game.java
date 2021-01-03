@@ -8,7 +8,7 @@ import java.awt.image.BufferStrategy;
 
 import CODE.ANIMATION.Assets;
 import CODE.STATE.GameState;
-import CODE.STATE.MenuState;
+
 import CODE.STATE.State;
 
 
@@ -25,7 +25,7 @@ public class Game implements Runnable {
 	public int on=0;
 
 	private State gameState;
-	private State menuState;
+
 
 	private KeyManager keyManager;
 	public  boolean P;
@@ -52,7 +52,7 @@ public class Game implements Runnable {
 		Assets.init();
 		
 		gameState=new GameState(this);
-		menuState=new MenuState(this);
+		
 		State.setState(gameState);
 		
 	}

@@ -20,6 +20,7 @@ public class hero extends Creature{
 	private Animation animright;
 	private Animation animleft;
 	private Animation animhealth;
+	private int timetick=0;
 	
 	private long lastAttackTimer,attackCooldown=100,attackTimer=attackCooldown;
 	
@@ -27,7 +28,7 @@ public class hero extends Creature{
 
 	public hero(Game game,World world,float x, float y) throws Exception {
 		super(game,world,x, y,Creature.DEFAULT_CREATURE_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
- 
+        
 		bounds.x=8;
 		bounds.y=0;
 		bounds.width=15;
@@ -210,7 +211,8 @@ public class hero extends Creature{
 		}else if(health==1){
 			return animhealth.getFrames(14);
 		}else {
-			return animhealth.getFrames(15);	
+			return animhealth.getFrames(15);
+			
 		}
 		
 	    
@@ -234,9 +236,16 @@ public class hero extends Creature{
 		getInput();
 		moveh();
 		checkAttacks();
+		isdead();
 		}
+	
 		
-		
+	}
+	public void isdead() {
+	if (health<=0) {
+		game.P=false;
+		game.continu.frame.setVisible(true);
+		}
 	}
 
 	@Override

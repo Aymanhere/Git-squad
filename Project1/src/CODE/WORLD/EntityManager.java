@@ -4,6 +4,12 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 import CODE.ENTITY.Entity;
+import CODE.ENTITY.Fantome;
+import CODE.ENTITY.Magique;
+import CODE.ENTITY.Monstre;
+import CODE.ENTITY.Piege;
+import CODE.ENTITY.Teleportation;
+import CODE.ENTITY.Tresor;
 import CODE.ENTITY.hero;
 import CODE.MANAGER.Game;
 import CODE.WORLD.World;
@@ -56,9 +62,7 @@ public class EntityManager {
 	}
 
 	public void addEntity(Entity e){
-		
-		entities.add(e);
-	}
+        entities.add(e);}
 
 
 	public ArrayList<Entity> getEntities() {
