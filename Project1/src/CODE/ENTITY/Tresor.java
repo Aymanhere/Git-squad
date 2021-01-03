@@ -13,7 +13,7 @@ public class Tresor extends StaticEntity {
 	private long lastAttackTimer,attackCooldown=1000,attackTimer=attackCooldown;
 	private Animation win;
 
-	public Tresor(Game game, World world, float x, float y) {
+	public Tresor(Game game, World world, float x, float y) throws Exception {
 		super(game, world, x, y,Tile.TILEWIDTH,Tile.TILEHEIGHT);
 		bounds.x=8;
 		bounds.y=0;

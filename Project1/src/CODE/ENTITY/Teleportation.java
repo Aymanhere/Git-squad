@@ -11,7 +11,7 @@ public class Teleportation extends StaticEntity{
 
         private int a,b;
 
-		public Teleportation(Game game, World world, float x, float y,int a,int b) {
+		public Teleportation(Game game, World world, float x, float y,int a,int b) throws Exception {
 			super(game, world, x, y,Tile.TILEWIDTH,Tile.TILEHEIGHT);
 			this.a=a;
 			this.b=b;

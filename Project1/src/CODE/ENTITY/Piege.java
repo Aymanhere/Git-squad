@@ -11,7 +11,7 @@ public class Piege extends StaticEntity {
 
 	private long lastAttackTimer,attackCooldown=50,attackTimer=attackCooldown;
 
-	public Piege(Game game, World world, float x, float y) {
+	public Piege(Game game, World world, float x, float y) throws Exception {
 		super(game, world, x, y,Tile.TILEWIDTH,Tile.TILEHEIGHT);
 		bounds.x=0;
 		bounds.y=0;

@@ -14,10 +14,10 @@ class test_hero {
 	//test Right
 
 	@Test
-	void testXY() {
+	void testXY() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
-		hero h1=new hero(game,world,1500,1500);
+		hero h1=new hero(game,world,20,20);
 		h1.xMove=15;
 		h1.moveh();
 		assertEquals(35,h1.x);
@@ -26,19 +26,19 @@ class test_hero {
 		assertEquals(37,h1.y);
 	}
 	@Test
-	void testXnegative() {
+	void testXnegative() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
-		hero h2=new hero(game,world,1500,1500);
+		hero h2=new hero(game,world,20,20);
 		h2.xMove=-9;//28-9<20 donc collision 
 		h2.moveh();
 		assertEquals(20,h2.x);
 	}
 @Test
-	void testCollision() {
+	void testCollision() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
-		hero h3=new hero(game,world,1500,1500);
+		hero h3=new hero(game,world,20,20);
 		h3.xMove=-10;
 		h3.moveh();
 		assertFalse(h3.checkEntityCollisions(h3.xMove,0f));
@@ -47,10 +47,10 @@ class test_hero {
 		System.out.println(h3.x);
 	}
 	@Test
-	void testSortie() {
+	void testSortie() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
-		hero h4=new hero(game,world,1500,1500);
+		hero h4=new hero(game,world,20,20);
 		h4.xMove=-3;
 		int tx = (int) (h4.x + h4.xMove + h4.bounds.x) / Tile.TILEWIDTH;
 		assertFalse(h4.checkEntityCollisions(h4.xMove,0f));
@@ -61,10 +61,10 @@ class test_hero {
 	}
 	
 	@Test
-	 void testyMovenegative() {
+	 void testyMovenegative() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
-		hero h5=new hero(game,world,1500,1500);
+		hero h5=new hero(game,world,20,20);
 		h5.yMove=20;
 		h5.moveh();
 		h5.yMove=-10;
@@ -73,10 +73,10 @@ class test_hero {
 		assertEquals(30,h5.y);
 	}
 	@Test
-	 void testySortie() {
+	 void testySortie() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
-		hero h5=new hero(game,world,1500,1500);
+		hero h5=new hero(game,world,20,20);
 		//h5.yMove=20;
 		h5.yMove=-1;
 		assertFalse(h5.checkEntityCollisions(0f,h5.yMove));

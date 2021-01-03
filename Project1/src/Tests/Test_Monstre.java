@@ -12,14 +12,15 @@ import CODE.ENTITY.Piege;
 import CODE.ENTITY.hero;
 import CODE.MANAGER.Game;
 import CODE.WORLD.World;
+import CODE.WORLD.World1;
 import CODE.WORLD.World3;
 
 class Test_Monstre {
 
 	@Test
-	void testPositionMonstre() {
+	void testPositionMonstre() throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
+		World world=new World1(game,"res/worlds/worlds3.txt",game.ld);
 		hero h1=new hero(game,world,238,60);
 		Entity monstre1=new Monstre(game,world,200,60);
 		assertEquals(200,monstre1.x);
@@ -28,7 +29,7 @@ class Test_Monstre {
 	}
 	
 	@Test
-	void testCollisionMonstre() {
+	void testCollisionMonstre() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		hero h1=new hero(game,world,240,100);
@@ -45,7 +46,7 @@ class Test_Monstre {
 		assertTrue(monstre1.Attack);
 	}
 	@Test
-	void testEffetMonstre() {
+	void testEffetMonstre() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		hero h1=new hero(game,world,240,100);

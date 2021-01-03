@@ -13,7 +13,7 @@ import CODE.MANAGER.level_and_design;
 
 public class World1 extends World{
 
-	public World1(Game game, String path,level_and_design ld) {
+	public World1(Game game, String path,level_and_design ld) throws Exception {
 		super(game, path,ld);
 		entityManager=new EntityManager(game,world,new hero(game,world,20,20));
 		Entity piege=new Piege(game,world,270,60);

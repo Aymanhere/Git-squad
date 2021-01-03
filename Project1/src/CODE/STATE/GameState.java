@@ -24,38 +24,38 @@ public class GameState extends State {
 
 	protected World world;
 	
-	public GameState(Game game) {
+	public GameState(Game game) throws Exception {
 		super(game);
 		if (level_and_design.level==1) {
-		String path="res/worlds/worlds.11.txt";
-		File file=new File(path);
+		String path="res/worlds/worlds.txt";
+		/*File file=new File(path);
 		if (!file.exists()) {			
 			world=new World1(game,"res/worlds/default_world.txt",game.ld);
-			System.out.println("File doesn't exists");
-		}else {
+			System.out.println("File doesn't exist! Path is by default!");
+		}else {*/
 			world=new World1(game,path,game.ld);			
-		}
+		//}
 		}
 		else if (level_and_design.level==2) {
 			
 		String path="res/worlds/worlds2.txt";
 		File file=new File(path);
-		if (!file.exists()) {			
+		/*if (!file.exists()) {			
 			world=new World2(game,"res/worlds/default_world.txt",game.ld);
-			System.out.println("File doesn't exists");
-		}else {
+			System.out.println("File doesn't exist! Path is by default!");
+		}else {*/
 			world=new World2(game,path,game.ld);			
-		}
+		//}
 		}
 		else if (level_and_design.level==3) {
 		String path="res/worlds/worlds3.txt";
 		File file=new File(path);
-		if (!file.exists()) {			
+		/*if (!file.exists()) {			
 			world=new World3(game,"res/worlds/default_world.txt",game.ld);
-			System.out.println("File doesn't exists");
-		}else {
+			System.out.println("File doesn't exist! Path is by default!");
+		}else {*/
 			world=new World3(game,path,game.ld);			
-		}
+		//}
 		}
 		else {
 			System.out.println("The level is by default ");

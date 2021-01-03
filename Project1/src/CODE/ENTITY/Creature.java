@@ -17,7 +17,7 @@ public abstract class Creature extends Entity{
 	public float xMove;
 	public float yMove;
 
-	public Creature(Game game,World world,float x, float y, int width, int height) {
+	public Creature(Game game,World world,float x, float y, int width, int height) throws Exception {
 		super(game,world,x, y, width, height);
 		speed = DEFAULT_SPEED;
 		xMove = 0;

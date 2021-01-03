@@ -27,7 +27,7 @@ public class Fantome extends Creature {
 	
 
 
-	public Fantome(Game game,World world,float x, float y) {
+	public Fantome(Game game,World world,float x, float y) throws Exception {
 		super(game,world,x, y,Creature.DEFAULT_CREATURE_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
 		animfantome=new Animation(500,Assets.fantome);
 		attackfantome=new Animation(500,Assets.fantome_attack);

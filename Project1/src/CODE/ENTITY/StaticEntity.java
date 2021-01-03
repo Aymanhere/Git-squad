@@ -5,7 +5,7 @@ import CODE.WORLD.World;
 
 public abstract class  StaticEntity extends Entity {
 
-	public StaticEntity(Game game, World world, float x, float y, int width, int height) {
+	public StaticEntity(Game game, World world, float x, float y, int width, int height) throws Exception {
 		super(game, world, x, y, width, height);
 		
 	}

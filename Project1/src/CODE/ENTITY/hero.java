@@ -25,7 +25,7 @@ public class hero extends Creature{
 	
 
 
-	public hero(Game game,World world,float x, float y) {
+	public hero(Game game,World world,float x, float y) throws Exception {
 		super(game,world,x, y,Creature.DEFAULT_CREATURE_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
  
 		bounds.x=8;

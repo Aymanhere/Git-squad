@@ -19,7 +19,7 @@ import CODE.WORLD.World3;
 class Test_case_special {
 
 	@Test
-	void testPiege() {
+	void testPiege() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		Entity piege1=new Piege(game,world,238,60);
@@ -27,7 +27,7 @@ class Test_case_special {
 		assertEquals(60,piege1.y);
 	}
 	@Test
-	void testCollisionPiege() {
+	void testCollisionPiege() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		hero h1=new hero(game,world,238,60);
@@ -35,7 +35,7 @@ class Test_case_special {
 		assertTrue(h1.getCollisionBounds(0,0).intersects(piege1.getCollisionBounds(0,0)));
 	}
 	@Test
-	void testPiegeEffect() {
+	void testPiegeEffect() throws Exception {
 		Game game2 = new Game("Game",1000,640);
 		World world2=new World3(game2,"res/worlds/worlds3.txt",game2.ld);
 		hero h2=new hero(game2,world2,238,60);
@@ -46,7 +46,7 @@ class Test_case_special {
 		assertEquals(14,h2.health);
 	    }
 	@Test
-	void testTresor() {
+	void testTresor() throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
 		Entity tresor=new Tresor(game,world,945,585);
@@ -55,7 +55,7 @@ class Test_case_special {
 	}
 	
 	@Test
-	void testEFFECTTeleportation() {
+	void testEFFECTTeleportation() throws Exception {
 		Game game2 = new Game("Game",1000,640);
 		World world2=new World3(game2,"res/worlds/worlds3.txt",game2.ld);
 		hero h2=new hero(game2,world2,238,60);
@@ -70,7 +70,7 @@ class Test_case_special {
 	    }
 	
 	@Test
-	void testEFFECTMagic() {
+	void testEFFECTMagic() throws Exception {
 		Game game3 = new Game("Game",1000,640);
 		World world3=new World3(game3,"res/worlds/worlds3.txt",game3.ld);
 		hero h3=new hero(game3,world3,200,30);

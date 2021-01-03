@@ -46,7 +46,7 @@ public class Game implements Runnable {
 		
 		
 	}
-	private void init() {
+	private void init() throws Exception {
 		display=new Display(title,width,height);
 		display.getFrame().addKeyListener(keyManager);
 		Assets.init();
@@ -95,7 +95,12 @@ public class Game implements Runnable {
 		long timer=0;
 		int ticks=0;
 		
-		init();
+		try {
+			init();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		while(running) {
 			on+=1;
 			if(getKeyManger().pause) {

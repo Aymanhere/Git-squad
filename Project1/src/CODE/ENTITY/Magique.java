@@ -10,7 +10,7 @@ import CODE.WORLD.World;
 public class Magique extends StaticEntity{
 	private long lastAttackTimer,attackCooldown=1000,attackTimer=attackCooldown;
 
-	public Magique(Game game, World world, float x, float y) {
+	public Magique(Game game, World world, float x, float y) throws Exception {
 		super(game, world, x, y,Tile.TILEWIDTH,Tile.TILEHEIGHT);
 		bounds.x=8;
 		bounds.y=0;

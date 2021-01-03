@@ -20,16 +20,19 @@ public abstract class Entity  {
 	protected boolean active=true;
 	
 
-	public Entity( Game game,World world,float x, float y, int width, int height){
+	public Entity( Game game,World world,float x, float y, int width, int height) throws Exception{
 		this.world=world;
 		this.game=game;
 		if((20 <=x && x<=980) && (20<=y && y<=620)) {
 			this.x = x;
 			this.y = y;
 		}else {
-			System.out.println("l'objet est placé par défaut (20,20)");
 			this.x=20;
-			this.y=20;	
+		    this.y=20;	
+		    System.out.println("l'objet est placé par défaut (20,20)");
+			throw new Exception("The hero is outside the map!");
+			//System.out.println("l'objet est placé par défaut (20,20)");
+			
 		}
 
 		this.width = width;
