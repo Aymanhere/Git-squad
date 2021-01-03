@@ -83,19 +83,9 @@ public class MainMenu {
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(MainMenu.class.getResource("/textures/heroimg.jpg")));
-		lblNewLabel_1.setBounds(95, 102, 61, 80);
+		lblNewLabel_1.setIcon(new ImageIcon(MainMenu.class.getResource("/textures/HERO.png")));
+		lblNewLabel_1.setBounds(223, 109, 140, 116);
 		frame.getContentPane().add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("");
-		lblNewLabel_1_1.setIcon(new ImageIcon(MainMenu.class.getResource("/textures/tres.jpg")));
-		lblNewLabel_1_1.setBounds(269, 167, 61, 51);
-		frame.getContentPane().add(lblNewLabel_1_1);
-		
-		JLabel lblNewLabel_1_1_1 = new JLabel("");
-		lblNewLabel_1_1_1.setIcon(new ImageIcon(MainMenu.class.getResource("/textures/mstr.jpg")));
-		lblNewLabel_1_1_1.setBounds(438, 186, 61, 51);
-		frame.getContentPane().add(lblNewLabel_1_1_1);
 		
 		JButton btnNewButton_2 = new JButton("Close");
 		btnNewButton_2.setForeground(new Color(255, 255, 255));

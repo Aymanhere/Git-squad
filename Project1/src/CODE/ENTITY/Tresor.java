@@ -35,6 +35,7 @@ public class Tresor extends StaticEntity {
 		if((world.getEntityManager().getHero().getCollisionBounds(0,0).intersects(this.getCollisionBounds(0,0))))
 		g.drawImage(win.getCurrentFrame(),400,200,null);
 	}
+	
 
 
 	
