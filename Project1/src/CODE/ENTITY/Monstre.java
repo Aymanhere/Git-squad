@@ -27,6 +27,7 @@ public class Monstre extends Creature {
 	private int signey;
 	public Monstre(Game game,World world,float x, float y) throws Exception {
 		super(game,world,x, y,Creature.DEFAULT_CREATURE_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
+		
 		bounds.x=1;
 		bounds.y=0;
 		bounds.width=30;

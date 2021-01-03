@@ -5,6 +5,7 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import CODE.MANAGER.Game;
+import CODE.WORLD.Tile;
 import CODE.WORLD.World;
 
 public abstract class Entity  {
@@ -23,23 +24,75 @@ public abstract class Entity  {
 	public Entity( Game game,World world,float x, float y, int width, int height) throws Exception{
 		this.world=world;
 		this.game=game;
-		if((20 <=x && x<=980) && (20<=y && y<=620)) {
+		if(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608) {// && (!(collisionWithTile((int) ((this.x+bounds.x)/Tile.TILEWIDTH), (int) (this.y/ Tile.TILEHEIGHT))))) {
 			this.x = x;
 			this.y = y;
-		}else {
-			this.x=20;
-		    this.y=20;	
-		    System.out.println("l'objet est placé par défaut (20,20)");
-			throw new Exception("The hero is outside the map!");
-			//System.out.println("l'objet est placé par défaut (20,20)");
+		   }
+		Class<hero> h=hero.class;
+		
+		if(h.isInstance(this)) {
+			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
+				
+				this.x = 20;
+				this.y = 20;
+			   }}
+		
+		Class<Monstre> m=Monstre.class;
+		if(m.isInstance(this)) {
+			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
+				this.x = 900;
+				this.y = 20;
+			   }
+		   }
+	
+	    Class<Fantome> f=Fantome.class;
+	      if(f.isInstance(this)) {
+				if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
+					this.x = 20;
+					this.y = 580;
+				   }
+	      }
+    
+    Class<Piege> p=Piege.class;
+      if(p.isInstance(this)) {
+			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
+				this.x = 20;
+				this.y = 300;
+			   }
+       }
+      
+     Class<Magique> mag=Magique.class;
+     if(mag.isInstance(this)) {
+			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
+				this.x = 300;
+				this.y = 20;
+			   }
+    }
+     Class<Tresor> tr=Tresor.class;
+     if(tr.isInstance(this)) {
+			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
+				this.x = 900;
+				this.y =580;
+			   }
+         }
+     Class<Teleportation> tel=Teleportation.class;
+     if(tel.isInstance(this)) {
+			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
+				this.x = 500;
+				this.y = 300;
+			   }}
+
+
+			//throw new Exception("The hero is outside the map!");*/
 			
-		}
 
 		this.width = width;
 		this.height = height;
 		health = DEFAULT_HEALTH;
 
 		bounds = new Rectangle(0, 0, width, height);
+		
+		
 	}
 
 	public abstract void tick();
@@ -71,7 +124,10 @@ public abstract class Entity  {
 	public Rectangle getCollisionBounds(float xOffset, float yOffset){
 		return new Rectangle((int) (x + bounds.x + xOffset), (int) (y + bounds.y + yOffset), bounds.width, bounds.height);
 	}
-
+ 
+	public boolean collisionWithTile(int x, int y){
+		return world.getTile(x, y).isSolid(world.getId(x, y));
+	}
 	
 	public void hurt(double amt) {
 		health-=amt;

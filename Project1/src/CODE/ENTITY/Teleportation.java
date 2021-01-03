@@ -9,9 +9,9 @@ import CODE.WORLD.World;
 
 public class Teleportation extends StaticEntity{
 
-        private int a,b;
+        private float a,b;
 
-		public Teleportation(Game game, World world, float x, float y,int a,int b) throws Exception {
+		public Teleportation(Game game, World world, float x, float y,float a,float b) throws Exception {
 			super(game, world, x, y,Tile.TILEWIDTH,Tile.TILEHEIGHT);
 			this.a=a;
 			this.b=b;
@@ -41,7 +41,7 @@ public class Teleportation extends StaticEntity{
 		@Override
 		public void render(Graphics g) {
 			g.drawImage(Assets.teleportation_entre,(int)x,(int) y,null);
-			g.drawImage(Assets.teleportation_sortie,a,b,null);
+			g.drawImage(Assets.teleportation_sortie,(int)a,(int)b,null);
 		}
 
 		
