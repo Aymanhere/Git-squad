@@ -56,7 +56,7 @@ public class MainMenu {
 		frame.getContentPane().add(lblNewLabel);
 
 		JButton btnNewButton = new JButton("How to play");
-		btnNewButton.setFont(new Font("ROG Fonts", Font.BOLD, 19));
+		btnNewButton.setFont(new Font("ROG Fonts", Font.BOLD, 16));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(0, 0, 0));
 		btnNewButton.addActionListener(new ActionListener() {
@@ -66,7 +66,7 @@ public class MainMenu {
 			}
 		});
 	
-		btnNewButton.setBounds(342, 253, 209, 29);
+		btnNewButton.setBounds(342, 255, 209, 29);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1= new JButton("Play");
@@ -99,7 +99,7 @@ public class MainMenu {
 		
 		JButton btnNewButton_2 = new JButton("Close");
 		btnNewButton_2.setForeground(new Color(255, 255, 255));
-		btnNewButton_2.setFont(new Font("ROG Fonts", Font.BOLD, 19));
+		btnNewButton_2.setFont(new Font("ROG Fonts", Font.BOLD, 16));
 		btnNewButton_2.setBackground(new Color(0, 0, 0));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
