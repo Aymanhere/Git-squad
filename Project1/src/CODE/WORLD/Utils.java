@@ -52,7 +52,7 @@ public class Utils {
 		try {
 			return Integer.parseInt(number);
 		}catch(NumberFormatException e) {
-			System.out.println("S'il y a des lettre dans une case précise cette dernière prend la valeur 0 par défaut ");
+			System.out.println("Il y'a d'autres caractères que 0 ou 1 cette case donc elle prend la valeur 0 par défaut ");
 			return 0;
 			
 			

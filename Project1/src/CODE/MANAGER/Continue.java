@@ -1,4 +1,4 @@
-package CODE.MANAGER;
+/*package CODE.MANAGER;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -20,6 +20,7 @@ public class Continue {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);  
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Choose your game");
@@ -53,4 +54,9 @@ public class Continue {
 		frame.getContentPane().add(btnNewButton1);
 
 	}
+
+	public static void main(String[] args) {
+		frame.setLocationRelativeTo(null);  
+	}
 }
+*/

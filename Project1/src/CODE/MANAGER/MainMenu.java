@@ -22,6 +22,9 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
+import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 public class MainMenu {
 
@@ -36,16 +39,26 @@ public class MainMenu {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/textures/heroimg.jpg")));
+		frame.getContentPane().setBackground(new Color(0, 0, 0));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 600, 500);
+		frame.setLocationRelativeTo(null);  
 		frame.getContentPane().setLayout(null);
 		
 
-		JLabel lblNewLabel = new JLabel("Welcome!");
-		lblNewLabel.setBounds(173, 16, 92, 20);
+		
+		JLabel lblNewLabel = new JLabel("||Welcome To \r\nGitsquadGame||");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("ROG Fonts", Font.BOLD, 25));
+		lblNewLabel.setBounds(41, 0, 510, 124);
 		frame.getContentPane().add(lblNewLabel);
 
 		JButton btnNewButton = new JButton("How to play");
+		btnNewButton.setFont(new Font("ROG Fonts", Font.BOLD, 19));
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(0, 0, 0));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				game.Hw.frame.setVisible(true);
@@ -53,18 +66,48 @@ public class MainMenu {
 			}
 		});
 	
-		btnNewButton.setBounds(144, 52, 139, 29);
+		btnNewButton.setBounds(342, 253, 209, 29);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1= new JButton("Play");
+		btnNewButton_1.setFont(new Font("ROG Fonts", Font.BOLD, 16));
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setBackground(new Color(0, 0, 0));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				game.ld.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
-		btnNewButton_1.setBounds(154, 97, 115, 29);
+		btnNewButton_1.setBounds(26, 255, 209, 29);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(MainMenu.class.getResource("/textures/heroimg.jpg")));
+		lblNewLabel_1.setBounds(95, 102, 61, 80);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("");
+		lblNewLabel_1_1.setIcon(new ImageIcon(MainMenu.class.getResource("/textures/tres.jpg")));
+		lblNewLabel_1_1.setBounds(269, 167, 61, 51);
+		frame.getContentPane().add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("");
+		lblNewLabel_1_1_1.setIcon(new ImageIcon(MainMenu.class.getResource("/textures/mstr.jpg")));
+		lblNewLabel_1_1_1.setBounds(438, 186, 61, 51);
+		frame.getContentPane().add(lblNewLabel_1_1_1);
+		
+		JButton btnNewButton_2 = new JButton("Close");
+		btnNewButton_2.setForeground(new Color(255, 255, 255));
+		btnNewButton_2.setFont(new Font("ROG Fonts", Font.BOLD, 19));
+		btnNewButton_2.setBackground(new Color(0, 0, 0));
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton_2.setBounds(207, 339, 186, 29);
+		frame.getContentPane().add(btnNewButton_2);
 		
 		/*JLabel lblNewLabel_3 = new JLabel("");
 		Image img= new ImageIcon("textures/heroimg.jpg").getImage();
