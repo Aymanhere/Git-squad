@@ -43,6 +43,7 @@ public class MainMenu {
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 600, 500);
+		frame.setUndecorated(true);
 		frame.setLocationRelativeTo(null);  
 		frame.getContentPane().setLayout(null);
 		

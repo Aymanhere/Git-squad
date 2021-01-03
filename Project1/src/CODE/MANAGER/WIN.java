@@ -32,7 +32,7 @@ public class WIN{
 		frame.getContentPane().setLayout(null);
 		Image img= new ImageIcon("textures/heroimg.jpg").getImage();
 		frame.getContentPane().setLayout(null);
-		
+		frame.setUndecorated(true);
 		JButton btnNewButton_1 = new JButton("Menu");
 		btnNewButton_1.setForeground(Color.BLACK);
 		btnNewButton_1.setFont(new Font("ROG Fonts", Font.BOLD, 16));

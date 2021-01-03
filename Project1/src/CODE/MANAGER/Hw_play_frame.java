@@ -28,6 +28,7 @@ public class Hw_play_frame {
 		frame.getContentPane().setForeground(new Color(0, 0, 0));
 		frame.setBounds(100, 100, 600, 600);
 		frame.setLocationRelativeTo(null);  
+		frame.setUndecorated(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		JLabel lblNewLabel_4 = new JLabel("Game commands");

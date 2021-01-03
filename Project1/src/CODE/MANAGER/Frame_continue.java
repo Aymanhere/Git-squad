@@ -28,7 +28,8 @@ public class Frame_continue {
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLocationRelativeTo(null);  
+		frame.setLocationRelativeTo(null);
+		frame.setUndecorated(true);
 		JButton btnNewButton = new JButton("How to play");
 		btnNewButton.setFont(new Font("ROG Fonts", Font.BOLD, 16));
 		btnNewButton.setForeground(new Color(192, 192, 192));
