@@ -15,8 +15,8 @@ public class World1 extends World{
 
 	public World1(Game game, String path,level_and_design ld) throws Exception {
 		super(game, path,ld);
-		entityManager=new EntityManager(game,world,new hero(game,world,50,50));
-		Entity piege=new Piege(game,world,270,60);
+		entityManager=new EntityManager(game,world,new hero(game,world,20,20));
+		Entity piege=new Piege(game,world,50,100);
 		entityManager.addEntity(piege);
 		Entity piege1=new Piege(game,world,238,60);
 		entityManager.addEntity(piege1);
@@ -42,7 +42,7 @@ public class World1 extends World{
 		entityManager.addEntity(magique2);
 		Entity magique1=new Magique(game,world,220,525);
 		entityManager.addEntity(magique1);
-		Entity tresor=new Tresor(game,world,945,585);
+		Entity tresor=new Tresor(game,world,50,50);
 		entityManager.addEntity(tresor);
 		Entity teleportation=new Teleportation(game,world,80,420,920,368);
 		entityManager.addEntity(teleportation);

@@ -10,9 +10,9 @@ import CODE.WORLD.World;
 
 public class Tresor extends StaticEntity {
 
-	private long lastAttackTimer,attackCooldown=1000,attackTimer=attackCooldown;
 	private Animation win;
-
+	private int timetick=0;
+	private long lasttimer, cooldown=2000,timer=cooldown;
 	public Tresor(Game game, World world, float x, float y) throws Exception {
 		super(game, world, x, y,Tile.TILEWIDTH,Tile.TILEHEIGHT);
 		bounds.x=8;
@@ -25,10 +25,24 @@ public class Tresor extends StaticEntity {
 
 	@Override
 	public void tick() {
-	win.tick();
-		
+		win.tick();
+		win();
 	}
-
+	public void win() {
+		if((world.getEntityManager().getHero().getCollisionBounds(0,0).intersects(this.getCollisionBounds(0,0)))) {
+			/*timer+=System.currentTimeMillis()-lasttimer;
+			lasttimer=System.currentTimeMillis();
+			if(timer>cooldown) {
+			game.continu.frame.setVisible(true);
+			game.P=false;
+			}*/
+			game.P=false;
+			timetick+=1;
+			if (timetick>50){
+				game.continu.frame.setVisible(true);
+			}
+		}
+	}
 	@Override
 	public void render(Graphics g) {
 		g.drawImage(Assets.tresor,(int)x,(int) y,null);
