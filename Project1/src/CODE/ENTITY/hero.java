@@ -49,7 +49,7 @@ public class hero extends Creature{
 			tx2 = (int) (x+ bounds.x) / Tile.TILEWIDTH;
 			  if(!collisionWithTile(tx1, (int) (y+ bounds.y) / Tile.TILEHEIGHT) &&
 				!collisionWithTile(tx1, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !collisionWithTile(tx2, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
-				!collisionWithTile(tx2, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !checkEntityCollisions(0f,0f)) {
+				!collisionWithTile(tx2, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) ) {
 			     System.out.println("Positionnement incorrect du hero !! donc il est positionné par défaut au point(20,20)");
 			  this.x = 20;
 			  this.y = 20;}else {

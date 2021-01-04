@@ -43,15 +43,15 @@ public class World3 extends World {
 		entityManager.addEntity(magique2);
 		Entity magique1=new Magique(game,world,220,525);
 		entityManager.addEntity(magique1);
-		Entity tresor=new Tresor(game,world,945,585);
+		Entity tresor=new Tresor(game,world,930,585);
 		entityManager.addEntity(tresor);
 		Entity teleportation=new Teleportation(game,world,80,420,920,368);
 		entityManager.addEntity(teleportation);
 		Entity teleportation2=new Teleportation(game,world,780,20,140,420);
 		entityManager.addEntity(teleportation2);
-		Entity teleportation3=new Teleportation(game,world,340,590,40,268);
+		Entity teleportation3=new Teleportation(game,world,340,585,40,268);
 		entityManager.addEntity(teleportation3);
-		Entity teleportation4=new Teleportation(game,world,660,188,400,590);
+		Entity teleportation4=new Teleportation(game,world,660,188,400,585);
 		entityManager.addEntity(teleportation4);
 		Entity teleportation5=new Teleportation(game,world,728,300,100,20);
 		entityManager.addEntity(teleportation5);

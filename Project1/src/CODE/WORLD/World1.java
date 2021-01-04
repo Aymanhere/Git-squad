@@ -16,7 +16,7 @@ public class World1 extends World{
 	public World1(Game game, String path,level_and_design ld) throws Exception {
 		super(game, path,ld);
 		loadWorld(path);
-		entityManager=new EntityManager(game,world,new hero(game,world,20,20));
+		entityManager=new EntityManager(game,world,new hero(game,world,100,0));
 		Entity piege=new Piege(game,world,50,100);
 		entityManager.addEntity(piege);
 		Entity piege1=new Piege(game,world,238,60);
@@ -33,7 +33,7 @@ public class World1 extends World{
 		entityManager.addEntity(piege6);
 		Entity piege7=new Piege(game,world,440,490);
 		entityManager.addEntity(piege7);
-		Entity piege8=new Piege(game,world,770,468);
+		Entity piege8=new Piege(game,world,760,468);
 		entityManager.addEntity(piege8);
 		Entity piege9=new Piege(game,world,830,420);
 		entityManager.addEntity(piege9);
@@ -45,18 +45,18 @@ public class World1 extends World{
 		entityManager.addEntity(magique1);
 		Entity tresor=new Tresor(game,world,100,100);
 		entityManager.addEntity(tresor);
-		Entity teleportation=new Teleportation(game,world,80,420,920,368);
-		entityManager.addEntity(teleportation);
-		Entity teleportation2=new Teleportation(game,world,780,20,140,420);
-		entityManager.addEntity(teleportation2);
-		Entity teleportation3=new Teleportation(game,world,340,590,40,268);
+		//Entity teleportation=new Teleportation(game,world,80,420,920,368);
+		//entityManager.addEntity(teleportation);
+		//Entity teleportation2=new Teleportation(game,world,780,20,140,420);
+		//entityManager.addEntity(teleportation2);
+		Entity teleportation3=new Teleportation(game,world,340,585,40,268);
 		entityManager.addEntity(teleportation3);
-		Entity teleportation4=new Teleportation(game,world,660,188,400,590);
+		Entity teleportation4=new Teleportation(game,world,660,188,400,585);
 		entityManager.addEntity(teleportation4);
 		Entity teleportation5=new Teleportation(game,world,728,300,100,20);
 		entityManager.addEntity(teleportation5);
-		Entity teleportation6=new Teleportation(game,world,400,420,840,308);
-		entityManager.addEntity(teleportation6);
+		//Entity teleportation6=new Teleportation(game,world,400,420,840,308);
+		//entityManager.addEntity(teleportation6);
 		Entity monstre1=new Monstre(game,world,200,60);
 		entityManager.addEntity(monstre1);
 		Entity monstre2=new Monstre(game,world,340,220);
