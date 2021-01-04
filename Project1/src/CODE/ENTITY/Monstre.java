@@ -36,6 +36,31 @@ public class Monstre extends Creature {
 		animmonstre=new Animation(500,Assets.monstre);
 		attackmonstre=new Animation(500,Assets.monstre_attack);
 		animhealth=new Animation(500,Assets.health);
+		int tx1 = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
+		int tx2 = (int) (x+ bounds.x) / Tile.TILEWIDTH;
+		
+		if(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608 && !collisionWithTile(tx1, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx1, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !collisionWithTile(tx2, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx2, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !checkEntityCollisionsHero(0f,0f))  {
+			this.x = x;
+			this.y = y;
+		   }else {
+			x=400;
+			y=20;
+			tx1 = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
+			tx2 = (int) (x+ bounds.x) / Tile.TILEWIDTH;
+			  if(!collisionWithTile(tx1, (int) (y+ bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx1, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !collisionWithTile(tx2, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx2, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !checkEntityCollisionsHero(0f,0f)) {
+			     System.out.println("Positionnement incorrect du Monstre !! donc il est positionné par défaut au point(400,20)");
+			  this.x = 400;
+			  this.y = 20;}else {
+				  this.x = 400;
+				  this.y = 20;
+
+				  System.out.println("Position par défaut du monstre n'est pas convenable ! ");
+			  }
+		   }
 
 	}
 	public void moveM(){

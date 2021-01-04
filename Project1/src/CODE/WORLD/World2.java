@@ -15,6 +15,7 @@ public class World2 extends World {
 
 	public World2(Game game, String path,level_and_design ld) throws Exception {
 		super(game, path,ld);
+		loadWorld(path);
 		entityManager=new EntityManager(game,world,new hero(game,world,20,20));
 		Entity piege=new Piege(game,world,270,60);
 		entityManager.addEntity(piege);
@@ -84,7 +85,7 @@ public class World2 extends World {
 		entityManager.addEntity(fantome3);
 		Entity fantome4=new Fantome(game,world,340,590);
 		entityManager.addEntity(fantome4);
-		loadWorld(path);
+		
 	}
 
 }

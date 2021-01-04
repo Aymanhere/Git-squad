@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 import CODE.ANIMATION.Animation;
 import CODE.ANIMATION.Assets;
@@ -33,6 +34,32 @@ public class hero extends Creature{
 		bounds.y=0;
 		bounds.width=15;
 		bounds.height=29;
+		int tx1 = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
+		int tx2 = (int) (x+ bounds.x) / Tile.TILEWIDTH;
+		
+		if(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608 && !collisionWithTile(tx1, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx1, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !collisionWithTile(tx2, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx2, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT))  {
+			this.x = x;
+			this.y = y;
+		   }else {
+			x=20;
+			y=20;
+			tx1 = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
+			tx2 = (int) (x+ bounds.x) / Tile.TILEWIDTH;
+			  if(!collisionWithTile(tx1, (int) (y+ bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx1, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !collisionWithTile(tx2, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx2, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !checkEntityCollisions(0f,0f)) {
+			     System.out.println("Positionnement incorrect du hero !! donc il est positionné par défaut au point(20,20)");
+			  this.x = 20;
+			  this.y = 20;}else {
+				  this.x = 20;
+				  this.y = 20;
+
+				  System.out.println("Position par défaut du hero n'est pas convenable ! ");
+			  }
+		   }
+		
 		animhealth=new Animation(500,Assets.health);
 		animdown=new Animation(500,Assets.hero_down);
 		animup=new Animation(500,Assets.hero_up);

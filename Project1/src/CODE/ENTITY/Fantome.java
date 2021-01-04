@@ -36,7 +36,13 @@ public class Fantome extends Creature {
 		bounds.y=0;
 		bounds.width=23;
 		bounds.height=30;
-
+		if(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608 )  {
+			this.x = x;
+			this.y = y;
+		   }else {
+			x=20;
+			y=400;
+			System.out.println("Positionnement en dehors de la map !! Position par défaut Fantome(20,400) ");}
 	}
 	protected void move(){
 		if(!checkEntityCollisionsHero(xMove,0f))

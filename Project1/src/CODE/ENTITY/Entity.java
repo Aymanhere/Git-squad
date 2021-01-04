@@ -24,64 +24,9 @@ public abstract class Entity  {
 	public Entity( Game game,World world,float x, float y, int width, int height) throws Exception{
 		this.world=world;
 		this.game=game;
-		if(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608) {// && (!(collisionWithTile((int) ((this.x+bounds.x)/Tile.TILEWIDTH), (int) (this.y/ Tile.TILEHEIGHT))))) {
-			this.x = x;
-			this.y = y;
-		   }
-		Class<hero> h=hero.class;
 		
-		if(h.isInstance(this)) {
-			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
-				
-				this.x = 20;
-				this.y = 20;
-			   }}
-		
-		Class<Monstre> m=Monstre.class;
-		if(m.isInstance(this)) {
-			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
-				this.x = 900;
-				this.y = 20;
-			   }
-		   }
-	
-	    Class<Fantome> f=Fantome.class;
-	      if(f.isInstance(this)) {
-				if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
-					this.x = 20;
-					this.y = 580;
-				   }
-	      }
-    
-    Class<Piege> p=Piege.class;
-      if(p.isInstance(this)) {
-			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
-				this.x = 20;
-				this.y = 300;
-			   }
-       }
-      
-     Class<Magique> mag=Magique.class;
-     if(mag.isInstance(this)) {
-			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
-				this.x = 300;
-				this.y = 20;
-			   }
-    }
-     Class<Tresor> tr=Tresor.class;
-     if(tr.isInstance(this)) {
-			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
-				this.x = 900;
-				this.y =580;
-			   }
-         }
-     Class<Teleportation> tel=Teleportation.class;
-     if(tel.isInstance(this)) {
-			if(!(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608)) {
-				this.x = 500;
-				this.y = 300;
-			   }}
-
+		this.x = x;
+		this.y = y;
 
 			//throw new Exception("The hero is outside the map!");*/
 			
@@ -102,11 +47,14 @@ public abstract class Entity  {
 	
 	public boolean checkEntityCollisions(float xOffset, float yOffset){
 		ArrayList<Entity> entities=world.getEntityManager().getEntities();
-		for(int i=21;i<entities.size();i++){
-			if(entities.get(i).getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)))
+		Class<StaticEntity> s=StaticEntity.class;
+		if(entities!=null) {
+		for(int i=0;i<entities.size();i++){
+			if(entities.get(i).getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)) && entities.get(i)!=this && !(s.isInstance(entities.get(i))))
 				return true;
-		}
-		return false;
+		}return false;
+		}else {
+		return false;}
 	}
 	
 	

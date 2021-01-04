@@ -17,6 +17,31 @@ public class Piege extends StaticEntity {
 		bounds.y=0;
 		bounds.width=32;
 		bounds.height=24;
+		int tx1 = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
+		int tx2 = (int) (x+ bounds.x) / Tile.TILEWIDTH;
+		
+		if(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608 && !collisionWithTile(tx1, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx1, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !collisionWithTile(tx2, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx2, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) )  {
+			this.x = x;
+			this.y = y;
+		   }else {
+			x=880;
+			y=20;
+			tx1 = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
+			tx2 = (int) (x+ bounds.x) / Tile.TILEWIDTH;
+			  if(!collisionWithTile(tx1, (int) (y+ bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx1, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !collisionWithTile(tx2, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+				!collisionWithTile(tx2, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) ) {
+			     System.out.println("Positionnement incorrect du Piege !! donc il est positionné par défaut au point(880,20)");
+			  this.x = 880;
+			  this.y = 20;}else {
+				  this.x = 880;
+				  this.y = 20;
+
+				  System.out.println("Position par défaut du piege n'est pas convenable ! ");
+			  }
+		   }
 		
 	}
 
