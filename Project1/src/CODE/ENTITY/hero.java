@@ -71,10 +71,11 @@ public class hero extends Creature{
 	
 	public void moveh(){
 		int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
-		int ty = (int) (y + yMove + bounds.y) / Tile.TILEHEIGHT;
+		int ty = (int) (y + yMove + bounds.y+bounds.height) / Tile.TILEHEIGHT;
+		int ty1 = (int) (y + yMove + bounds.y+bounds.height-5) / Tile.TILEHEIGHT;
 		if(!checkEntityCollisions(xMove,0f) && tx!=0 && tx!=50)
 		    moveXh();
-		if(!checkEntityCollisions(0f,yMove)&& ty!=0 && ty!=30)
+		if(!checkEntityCollisions(0f,yMove)&& ty1!=0 && ty!=32)
 		    moveYh();
 	}
 	private void getInput() {

@@ -67,10 +67,11 @@ public class Monstre extends Creature {
 		
 		
 		int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
-		int ty = (int) (y + yMove + bounds.y) / Tile.TILEHEIGHT;
+		int ty = (int) (y + yMove + bounds.y+bounds.height) / Tile.TILEHEIGHT;
+		int ty1 = (int) (y + yMove + bounds.y+bounds.height-5) / Tile.TILEHEIGHT;
 		if(!checkEntityCollisionsHero(xMove,0f) && tx!=0 && tx!=50)
 		    moveXM();
-		if(!checkEntityCollisionsHero(0f,yMove)&& ty!=0 && ty!=30)
+		if(!checkEntityCollisionsHero(0f,yMove)&& ty1!=0 && ty!=32)
 		    moveYM();
 
 	}

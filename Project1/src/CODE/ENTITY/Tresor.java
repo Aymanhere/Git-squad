@@ -16,9 +16,9 @@ public class Tresor extends StaticEntity {
 	public Tresor(Game game, World world, float x, float y) throws Exception {
 		super(game, world, x, y,Tile.TILEWIDTH,Tile.TILEHEIGHT);
 		bounds.x=8;
-		bounds.y=0;
-		bounds.width=32;
-		bounds.height=28;
+		bounds.y=8;
+		bounds.width=16;
+		bounds.height=16;
 		win=new Animation(500,Assets.win);
 		int tx1 = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
 		int tx2 = (int) (x+ bounds.x) / Tile.TILEWIDTH;

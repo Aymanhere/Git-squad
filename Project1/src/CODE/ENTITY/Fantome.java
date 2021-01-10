@@ -45,49 +45,28 @@ public class Fantome extends Creature {
 			System.out.println("Positionnement en dehors de la map !! Position par défaut Fantome(20,400) ");}
 	}
 	protected void move(){
-		if(!checkEntityCollisionsHero(xMove,0f))
+		int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
+		int ty = (int) (y + yMove + bounds.y+bounds.height) / Tile.TILEHEIGHT;
+		int ty1 = (int) (y + yMove + bounds.y+bounds.height-5) / Tile.TILEHEIGHT;
+		if(!checkEntityCollisionsHero(xMove,0f) && tx!=0 && tx!=50)
 		    moveX();
-		if(!checkEntityCollisionsHero(0f,yMove))
+		if(!checkEntityCollisionsHero(0f,yMove)&& ty1!=0 && ty!=32)
 		    moveY();
+		
 	}
 	public void moveX(){
 		if(xMove > 0){//Moving right
-			int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
-
-			if(tx==50){
-				x -= xMove;
-			}else {
-				x+=xMove;
-			}
-			
+			x+=xMove;
 		}else if(xMove < 0){//Moving left
-			int tx = (int) (x + xMove + bounds.x) / Tile.TILEWIDTH;
-
-			if(tx==0){
-				x -= xMove;
-			}else {
-				x+=xMove;
-			}
+			x+=xMove;
 		}
 	}
 
 	public void moveY(){
 		if(yMove < 0){//Up
-			int ty = (int) (y + yMove + bounds.y) / Tile.TILEHEIGHT;
-
-			if(ty==0){
-				y -= yMove;
-			}else {
-				y += yMove;
-			}
+			y+=yMove;
 		}else if(yMove > 0){//Down
-			int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.TILEHEIGHT;
-
-			if(ty==32){
-				y -= yMove;
-			}else {
-				y += yMove;
-			}
+			y+=yMove;
 		}
 	}
 	@Override

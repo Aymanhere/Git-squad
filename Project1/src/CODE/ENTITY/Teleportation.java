@@ -21,8 +21,8 @@ public class Teleportation extends StaticEntity{
 			bounds.height=28;
 			int tx1 = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
 			int tx2 = (int) (x+ bounds.x) / Tile.TILEWIDTH;
-			int txa = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
-			int txb = (int) (x+ bounds.x) / Tile.TILEWIDTH;
+			int txa = (int) (a + bounds.x + bounds.width) / Tile.TILEWIDTH;
+			int txb = (int) (a + bounds.x) / Tile.TILEWIDTH;
 			
 			if(0<=this.x && this.x<=968 && 0<=this.y && this.y<=608 && 0<=this.a && this.a<=968 && 0<=this.b && this.b<=608 && !collisionWithTile(tx1, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
 					!collisionWithTile(tx1, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !collisionWithTile(tx2, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
@@ -33,7 +33,7 @@ public class Teleportation extends StaticEntity{
 				this.x = x;
 				this.y = y;
 				this.a=a;
-				this.a=b;
+				this.b=b;
 			   }else {
 				x=20;
 				y=560;
@@ -41,8 +41,8 @@ public class Teleportation extends StaticEntity{
 				b=560;
 				tx1 = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
 				tx2 = (int) (x+ bounds.x) / Tile.TILEWIDTH;
-				txa = (int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH;
-				txb = (int) (x+ bounds.x) / Tile.TILEWIDTH;
+				txa = (int) (a + bounds.x + bounds.width) / Tile.TILEWIDTH;
+				txb = (int) (a + bounds.x) / Tile.TILEWIDTH;
 				  if(!collisionWithTile(tx1, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
 							!collisionWithTile(tx1, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) && !collisionWithTile(tx2, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
 							!collisionWithTile(tx2, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT) 
