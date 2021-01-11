@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class Hw_play_frame {
 
@@ -24,6 +25,7 @@ public class Hw_play_frame {
 
 	public void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Hw_play_frame.class.getResource("/textures/HERO.png")));
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
 		frame.getContentPane().setForeground(new Color(0, 0, 0));
 		frame.setBounds(100, 100, 600, 600);

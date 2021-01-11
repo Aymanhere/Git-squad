@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 public class Frame_continue {
 
@@ -25,6 +26,7 @@ public class Frame_continue {
 
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Frame_continue.class.getResource("/textures/HERO.png")));
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,7 +58,7 @@ public class Frame_continue {
 			}
 		});
 		frame.getContentPane().setLayout(null);
-		btnNewButton_2.setBounds(148, 125, 139, 50);
+		btnNewButton_2.setBounds(126, 125, 179, 50);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		JButton btnNewButton_1 = new JButton("End Game");

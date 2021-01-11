@@ -16,7 +16,7 @@ public class World1 extends World{
 	public World1(Game game, String path,level_and_design ld) throws Exception {
 		super(game, path,ld);
 		loadWorld(path);
-		entityManager=new EntityManager(game,world,new hero(game,world,100,0));
+		entityManager=new EntityManager(game,world,new hero(game,world,20,20));
 		Entity tresor=new Tresor(game,world,945,585);
 		entityManager.addEntity(tresor);
 		Entity teleportation=new Teleportation(game,world,310,140,710,140);
@@ -31,13 +31,13 @@ public class World1 extends World{
 		entityManager.addEntity(monstre1);
 		Entity fantome2=new Fantome(game,world,160,70);
 		entityManager.addEntity(fantome2);
-		Entity fantome=new Fantome(game,world,520,40);
+		Entity fantome=new Fantome(game,world,450,40);
 		entityManager.addEntity(fantome);
 		Entity fantome1=new Fantome(game,world,500,40);
 		entityManager.addEntity(fantome1);
-		Entity monstre3=new Monstre(game,world,540,40);
+		Entity monstre3=new Monstre(game,world,550,20);
 		entityManager.addEntity(monstre3);
-		Entity monstre4=new Monstre(game,world,560,40);
+		Entity monstre4=new Monstre(game,world,570,20);
 		entityManager.addEntity(monstre4);
 		
 

@@ -14,6 +14,7 @@ import CODE.ENTITY.Tresor;
 import CODE.ENTITY.hero;
 import CODE.MANAGER.Game;
 import CODE.WORLD.World;
+import CODE.WORLD.World1;
 import CODE.WORLD.World3;
 
 class Test_case_special {
@@ -21,23 +22,16 @@ class Test_case_special {
 	@Test
 	void testPiege() throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
+		World world=new World1(game,"res/worlds/worlds.txt",game.ld);
 		Entity piege1=new Piege(game,world,238,60);
 		assertEquals(238,piege1.x);
 		assertEquals(60,piege1.y);
 	}
-	@Test
-	void testCollisionPiege() throws Exception {
-		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
-		hero h1=new hero(game,world,238,60);
-		Entity piege1=new Piege(game,world,238,60);
-		assertTrue(h1.getCollisionBounds(0,0).intersects(piege1.getCollisionBounds(0,0)));
-	}
+
 	@Test
 	void testPiegeEffect() throws Exception {
 		Game game2 = new Game("Game",1000,640);
-		World world2=new World3(game2,"res/worlds/worlds3.txt",game2.ld);
+		World world2=new World1(game2,"res/worlds/worlds.txt",game2.ld);
 		hero h2=new hero(game2,world2,238,60);
 		world2.getEntityManager().setHero(h2);
 		Entity piege2=new Piege(game2,world2,238,60);
@@ -48,7 +42,7 @@ class Test_case_special {
 	@Test
 	void testTresor() throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
+		World world=new World1(game,"res/worlds/worlds.txt",game.ld);
 		Entity tresor=new Tresor(game,world,945,585);
 		assertEquals(945,tresor.x);
 		assertEquals(585,tresor.y);
@@ -57,7 +51,7 @@ class Test_case_special {
 	@Test
 	void testEFFECTTeleportation() throws Exception {
 		Game game2 = new Game("Game",1000,640);
-		World world2=new World3(game2,"res/worlds/worlds3.txt",game2.ld);
+		World world2=new World1(game2,"res/worlds/worlds.txt",game2.ld);
 		hero h2=new hero(game2,world2,238,60);
 		world2.getEntityManager().setHero(h2);
 		Entity teleportation2=new Teleportation(game2,world2,238,60,35,40);
@@ -72,7 +66,7 @@ class Test_case_special {
 	@Test
 	void testEFFECTMagic() throws Exception {
 		Game game3 = new Game("Game",1000,640);
-		World world3=new World3(game3,"res/worlds/worlds3.txt",game3.ld);
+		World world3=new World1(game3,"res/worlds/worlds.txt",game3.ld);
 		hero h3=new hero(game3,world3,200,30);
 		world3.getEntityManager().setHero(h3);
 		Entity magic=new Magique(game3,world3,200,30);

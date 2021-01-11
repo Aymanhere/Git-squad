@@ -18,6 +18,7 @@ import javax.swing.JRadioButton;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.ButtonGroup;
+import java.awt.Toolkit;
 
 public class level_and_design {
     public static  int level=1;
@@ -38,6 +39,7 @@ public class level_and_design {
 
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(level_and_design.class.getResource("/textures/HERO.png")));
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
 		frame.setBounds(100, 100, 600, 500);
 		frame.setLocationRelativeTo(null);  

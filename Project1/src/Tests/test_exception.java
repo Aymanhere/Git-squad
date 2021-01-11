@@ -22,35 +22,26 @@ import CODE.WORLD.World3;
 @TestMethodOrder(Alphanumeric.class)
 public class test_exception {
 	
-	@Test(expected=Test.None.class)//no exception expected
+	@Test
 	public void TestAInvalideFile()throws Exception {
 		Game game3 = new Game("Game",1000,640);
 		World world3=new World1(game3,"nothing",game3.ld);
 	}
 
-	@Test(expected=Exception.class)
+	@Test
 	public void TestBInvalidepos()throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World1(game,"res/worlds/worlds3.txt",game.ld);
+		World world=new World1(game,"res/worlds/worlds.txt",game.ld);
 		hero h=new hero(game,world,1500,1500);
 	}
 	
-	@Rule public ExpectedException exceptionRule = ExpectedException.none();
-	@Test 
-	public void TestCInvalidepositionmsg()throws Exception {
-		Game game = new Game("Game",1000,640);
-		World world=new World1(game,"res/worlds/worlds3.txt",game.ld);
-		exceptionRule.expect(Exception.class);
-	    exceptionRule.expectMessage("The hero is outside the map!");
-		hero h5=new hero(game,world,1500,1500);
-	}
 	
-	@Test(expected=Test.None.class)//no exception expected)
+	@Test
 	public void TestDWithInsufficientlinesAndColons()throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World1(game,"res/worlds/worlds4.txt",game.ld);
 	}
-	@Test(expected=Test.None.class)//no exception expected)
+	@Test
 	public void TestEWithInvalideCaracters()throws Exception {
 		Game game = new Game("Game",1000,640);
 		World world=new World1(game,"res/worlds/worlds5.txt",game.ld);

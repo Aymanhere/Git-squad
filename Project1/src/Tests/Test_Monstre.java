@@ -20,7 +20,7 @@ class Test_Monstre {
 	@Test
 	void testPositionMonstre() throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World1(game,"res/worlds/worlds3.txt",game.ld);
+		World world=new World1(game,"res/worlds/worlds.txt",game.ld);
 		hero h1=new hero(game,world,238,60);
 		Entity monstre1=new Monstre(game,world,200,60);
 		assertEquals(200,monstre1.x);
@@ -31,7 +31,7 @@ class Test_Monstre {
 	@Test
 	void testCollisionMonstre() throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
+		World world=new World1(game,"res/worlds/worlds.txt",game.ld);
 		hero h1=new hero(game,world,240,100);
 		//32-29=3
 		//29+51=80 on avance par 1 pixel on obtient la collision
@@ -48,7 +48,7 @@ class Test_Monstre {
 	@Test
 	void testEffetMonstre() throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
+		World world=new World1(game,"res/worlds/worlds.txt",game.ld);
 		hero h1=new hero(game,world,240,100);
 		//32-29=3
 		//29+51=80 on avance par 1 pixel on obtient la collision

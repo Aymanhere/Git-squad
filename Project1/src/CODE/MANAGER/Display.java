@@ -2,23 +2,39 @@ package CODE.MANAGER;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
 public class Display {
+
 	public JFrame frame;
 	private Canvas canvas;
 	private String title;
 	private int width,height;
+
+	/**
+	 * Launch the application.
+	 */
+	
+
+	/**
+	 * Create the application.
+	 */
 	public Display(String title,int width,int height) {
-		this.title=title;
-		this.width=width;
-		this.height=height;
-		createDisplay();
-				
+			this.title=title;
+			this.width=width;
+			this.height=height;
+		initialize();
 	}
-	private void createDisplay() {
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
 		frame=new JFrame(title);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Display.class.getResource("/textures/HERO.png")));
 		frame.setSize(width,height);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
@@ -32,7 +48,7 @@ public class Display {
 		canvas.setMinimumSize(new Dimension(width, height));
 		canvas.setFocusable(false);		
 		
-		frame.add(canvas);
+		frame.getContentPane().add(canvas);
 		frame.pack();
 	}
 	public Canvas getCanvas() {
@@ -43,4 +59,6 @@ public class Display {
 	}
 	
 
-}
+	}
+
+

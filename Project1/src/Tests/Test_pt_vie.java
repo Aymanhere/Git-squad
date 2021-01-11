@@ -8,6 +8,7 @@ import CODE.ENTITY.Monstre;
 import CODE.ENTITY.hero;
 import CODE.MANAGER.Game;
 import CODE.WORLD.World;
+import CODE.WORLD.World1;
 import CODE.WORLD.World3;
 
 class Test_pt_vie {
@@ -15,7 +16,7 @@ class Test_pt_vie {
 	@Test
 	void testPTVIEINITIAL() throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
+		World world=new World1(game,"res/worlds/worlds.txt",game.ld);
 		hero h1=new hero(game,world,20,20);
 		assertEquals(15,h1.health);
         
@@ -23,7 +24,7 @@ class Test_pt_vie {
 	@Test
 	void testPTVIE() throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
+		World world=new World1(game,"res/worlds/worlds.txt",game.ld);
 		hero h2=new hero(game,world,20,20);
 		h2.hurt(1);
 		assertEquals(14,h2.health);	
@@ -32,8 +33,8 @@ class Test_pt_vie {
 	@Test
 	void testPTVIEMonster() throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World3(game,"res/worlds/worlds3.txt",game.ld);
-		Monstre m1= new Monstre(game,world,340,590);
+		World world=new World1(game,"res/worlds/worlds.txt",game.ld);
+		Monstre m1= new Monstre(game,world,340,200);
 		m1.hurt(1);
 		assertEquals(14,m1.health);	
 }
