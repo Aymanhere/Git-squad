@@ -49,7 +49,7 @@ public class MainMenu {
 		
 
 		
-		JLabel lblNewLabel = new JLabel("||Welcome To \r\nGitsquadGame||");
+		JLabel lblNewLabel = new JLabel("||Welcome To \r\nMiniHero||");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("ROG Fonts", Font.BOLD, 25));

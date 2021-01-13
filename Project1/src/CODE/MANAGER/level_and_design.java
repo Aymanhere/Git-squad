@@ -89,7 +89,7 @@ public class level_and_design {
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("level 3");
 		rdbtnNewRadioButton_1.setForeground(new Color(255, 255, 255));
 		rdbtnNewRadioButton_1.setBackground(new Color(0, 0, 0));
-		rdbtnNewRadioButton_1.setFont(new Font("ROG Fonts", Font.PLAIN, 20));
+		rdbtnNewRadioButton_1.setFont(new Font("ROG Fonts", Font.BOLD, 20));
 		rdbtnNewRadioButton_1.setAction(action_2);
 		rdbtnNewRadioButton_1.setBounds(52, 250, 155, 34);
 		frame.getContentPane().add(rdbtnNewRadioButton_1);
