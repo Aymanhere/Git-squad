@@ -31,7 +31,7 @@ public class test_exception {
 	@Test
 	public void TestBInvalidepos()throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World1(game,"res/worlds/worlds.txt",game.ld);
+		World world=new World1(game,"/worlds/worlds.txt",game.ld);
 		hero h=new hero(game,world,1500,1500);
 	}
 	
@@ -39,12 +39,12 @@ public class test_exception {
 	@Test
 	public void TestDWithInsufficientlinesAndColons()throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World1(game,"res/worlds/worlds4.txt",game.ld);
+		World world=new World1(game,"/worlds/worlds4.txt",game.ld);
 	}
 	@Test
 	public void TestEWithInvalideCaracters()throws Exception {
 		Game game = new Game("Game",1000,640);
-		World world=new World1(game,"res/worlds/worlds5.txt",game.ld);
+		World world=new World1(game,"/worlds/worlds5.txt",game.ld);
 	}
 	//à ajouter le test de déposer des unitéssur le mur
 }

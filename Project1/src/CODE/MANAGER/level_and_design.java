@@ -21,7 +21,7 @@ import javax.swing.ButtonGroup;
 import java.awt.Toolkit;
 
 public class level_and_design {
-    public static  int level=1;
+    public static  int level=0;
     public  int design=1;
 	protected JFrame frame;
     private Game game;

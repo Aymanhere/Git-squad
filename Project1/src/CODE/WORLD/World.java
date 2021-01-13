@@ -134,7 +134,7 @@ public abstract class World {
 			
 		} catch (ArrayIndexOutOfBoundsException e ) {
 			System.out.println("le monde est généré par défaut");
-			file =Utils.loadFileAsString("res/worlds/default_world.txt");
+			file =Utils.loadFileAsString("/worlds/default_world.txt");
 			String[] tokens=file.split("\\s+");
 			tiles=new int[width][height];
 			for(int y=0;y<height;y++) {

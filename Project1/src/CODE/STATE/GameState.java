@@ -27,27 +27,29 @@ public class GameState extends State {
 	public GameState(Game game) throws Exception {
 		super(game);
 		if (level_and_design.level==1) {
-		String path="res/worlds/worlds.txt";
-
+		String path="/worlds/worlds.txt";
+		level_and_design.level=0;
 			world=new World1(game,path,game.ld);			
 	
 		}
 		else if (level_and_design.level==2) {
 			
-		String path="res/worlds/worlds2.txt";
+		String path="/worlds/worlds2.txt";
+		level_and_design.level=0;
 
 			world=new World2(game,path,game.ld);			
 	
 		}
 		else if (level_and_design.level==3) {
-		String path="res/worlds/worlds3.txt";
+		String path="/worlds/worlds3.txt";
+		level_and_design.level=0;
 
 			world=new World3(game,path,game.ld);			
 
 		}
 		else {
 			System.out.println("The level is by default ");
-			world=new World1(game,"res/worlds/worlds.txt",game.ld);
+			world=new World1(game,"/worlds/default_world.txt",game.ld);
 		}
 		}
 
