@@ -29,12 +29,10 @@ Monstres:
 -Ajouter des monstres qui se déplacent de façon intélligente et suivent le héros.
 
 Interface graphique:
--Créer une interface graphique simple.
--Implémenter les fonctionnalités dans cette interface.
--Améliorer l'apparence de l'interface graphique.
+-Avoir une interface graphique plaisante et interactive.
 
 Utilisateur:
--Permettre à l'utilisateur de choisir l niveau de difficulté.
+-Permettre à l'utilisateur de choisir le niveau de difficulté.
 -Permettre à l'utilisateur d'effectuer des entrées pour agir sur le jeux (deplacer le héros, attaquer).
 -Possibilté de faire une pause dans le jeux.
 -Possibilité de quitter le jeux.
